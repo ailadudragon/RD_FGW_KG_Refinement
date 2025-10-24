@@ -1,0 +1,2685 @@
+{
+  "meta": {
+    "source": "Data Science Programming",
+    "extraction_time": "2023-10-01T00:00:00Z",
+    "notes_hash": "9d29c95b28d0bb85de79ebd3cb7e51caa37b30856c24f49f797889a749393062",
+    "allowed_relations": [
+      "isA",
+      "partOf",
+      "prerequisiteOf",
+      "dependsOn",
+      "relatedTo",
+      "synonymOf",
+      "antonymOf",
+      "contrastsWith",
+      "defines",
+      "uses",
+      "usedBy",
+      "appliesTo",
+      "exampleOf",
+      "counterexampleOf",
+      "illustratedBy",
+      "causes",
+      "resultsIn",
+      "prevents",
+      "assumes",
+      "implies",
+      "equivalentTo",
+      "parameterOf",
+      "hasParameter",
+      "propertyOf",
+      "hasProperty",
+      "measuredBy",
+      "unitOf",
+      "representedBy",
+      "notationFor",
+      "formulaFor",
+      "provedBy",
+      "theoremOf",
+      "algorithmFor",
+      "stepOf",
+      "produces",
+      "consumes",
+      "advantageOf",
+      "limitationOf",
+      "commonErrorIn",
+      "misconceptionOf",
+      "commonlyConfusedWith",
+      "assessedBy"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "1",
+      "label": "Time Series Data",
+      "type": "Concept",
+      "definition": "Time series data is a sequence of data points indexed in time order.",
+      "aliases": [
+        "Time Series"
+      ],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "Time Series"
+          ],
+          "line_start": 1,
+          "line_end": 1,
+          "text_excerpt": "Time series data is an important form of structured data in many different fields..."
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "The definition is directly stated and is fundamental to the topic of time series analysis."
+    },
+    {
+      "id": "3",
+      "label": "Datetime",
+      "type": "Concept",
+      "definition": "The datetime class in Python provides methods for manipulating dates and times.",
+      "aliases": [
+        "datetime"
+      ],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "Date and Time Data Types and Tools"
+          ],
+          "line_start": 1,
+          "line_end": 1,
+          "text_excerpt": "The datetime, time, and calendar modules are the main places to start."
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "The description is directly sourced from the lecture notes and defines a key tool in time series analysis."
+    },
+    {
+      "id": "4",
+      "label": "Time Zone Handling",
+      "type": "Concept",
+      "definition": "Time zone handling is crucial for accurately analyzing time series data across different regions.",
+      "aliases": [
+        "Time Zone Management"
+      ],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "Time Zone Handling"
+          ],
+          "line_start": 0,
+          "line_end": 0,
+          "text_excerpt": "Working with time zones is generally considered one of the most unpleasant parts of time series manipulation."
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "The significance of time zone handling is highlighted as a key aspect of time series analysis."
+    },
+    {
+      "id": "5",
+      "label": "Timespan",
+      "type": "Concept",
+      "definition": "Periods in time series data represent timespans such as days, months, and years.",
+      "aliases": [
+        "Period"
+      ],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "Periods and Period Arithmetic"
+          ],
+          "line_start": 0,
+          "line_end": 0,
+          "text_excerpt": "Periods represent timespans, like days, months, quarters, or years."
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "The explanation of periods and their significance is crucial for understanding time series data."
+    },
+    {
+      "id": "strftime_operation",
+      "label": "strftime operation",
+      "type": "Concept",
+      "definition": "stamp.strftime('%y-%m-%d')",
+      "aliases": [],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling",
+            "Converting Between String and Datetime"
+          ],
+          "line_start": 70,
+          "line_end": 70,
+          "text_excerpt": "stamp.strftime('%y-%m-%d')"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Added to reduce distortion; under-represented lecture content."
+    },
+    {
+      "id": "Patient",
+      "label": "Patient",
+      "type": "Concept",
+      "definition": "pts",
+      "aliases": [],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Periods and Period Arithmetic",
+            "Converting Timestamps to Periods (and Back)"
+          ],
+          "line_start": 255,
+          "line_end": 255,
+          "text_excerpt": "pts"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Added to reduce distortion; under-represented lecture content."
+    },
+    {
+      "id": "Timestamp_creation",
+      "label": "Timestamp creation",
+      "type": "Concept",
+      "definition": "stamp = pd.timestamp('2011-03-12 04:00')",
+      "aliases": [],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling in Pandas",
+            "Operations with Time Zone\u2212Aware Timestamp Objects"
+          ],
+          "line_start": 218,
+          "line_end": 218,
+          "text_excerpt": "stamp = pd.timestamp('2011-03-12 04:00')"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Added to reduce distortion; under-represented lecture content."
+    },
+    {
+      "id": "Pandas_time_series_data_manipulation",
+      "label": "Pandas time series data manipulation",
+      "type": "Library",
+      "definition": "as finance, economics, ecology, neuroscience, and physics. anything that is observed\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nwith pip or conda), which exposes the olson database, a compilation of world\nimport pytz\npandas is generally oriented toward working with arrays of dates, whether used as an\nis often represented external to pandas as python strings or datetime objects.\npandas.date_range is responsible for\nfrom pandas.tseries.offsets import hour, minute\ndataframe have a shift method for doing naive shifts forward or backward, leaving\ncolumns=['colorado', 'texas', 'new york', 'ohio'])\ncolumns=['colorado', 'texas', 'new york', 'ohio'])",
+      "aliases": [
+        "pandas"
+      ],
+      "provenance": [
+        {
+          "section_path": [
+            "imports"
+          ],
+          "line_start": 0,
+          "line_end": 0,
+          "text_excerpt": "longer_ts = pd.series(np.random.randn(1000),\nindex=pd.date_range('1/1/2023', periods=1000))\ndates = pd.datetimeindex(['1/1/2000', '1/2/2000', '1/2/2000',\ndup_ts = pd.series(np.arange(5), index=dates)\nto do this is to use groupby and pass level=0:\ngrouped = dup_ts.groupby(level=0)\nresampler = ts.resample('d')\nts = pd.series(np.random.randn(4),\nindex=pd.date_range('1/1/2000', periods=4, freq='m'))\nts = pd.series(np.random.randn(len(rng)), index=rng)\nts = pd.series(np.random.randn(len(rng)), index=rng)\np = pd.period('2007', freq='a-dec')\nrng = pd.date_range('2000-01-01', periods=3, freq='m')\nts = pd.series(np.random.randn(3), index=rng)\nrng = pd.date_range('2000-01-01', periods=100, freq='d')\nts = pd.series(np.random.randn(len(rng)), index=rng)\nrng = pd.date_range('2000-01-01', periods=12, freq='t')\nlabel='right', loffset='-1s').sum()\nframe = pd.dataframe(np.random.randn(2, 4),\nindex=pd.date_range('1/1/2000', periods=2,\nframe.resample('w-thu').ffill()\nframe = pd.dataframe(np.random.randn(24, 4),\nindex=pd.period_range('1-2000', '12-2001',\nannual_frame = frame.resample('a-dec').mean()\nannual_frame.resample('q-dec').ffill()\nannual_frame.resample('q-mar').ffill()"
+        }
+      ],
+      "attributes": {},
+      "confidence": 0.55,
+      "rationale": "Split concept with diverse coupling."
+    },
+    {
+      "id": "Pandas_Time_Series_Resampling",
+      "label": "Pandas Time Series Resampling",
+      "type": "Library",
+      "definition": "longer_ts = pd.series(np.random.randn(1000),\nindex=pd.date_range('1/1/2023', periods=1000))\ndates = pd.datetimeindex(['1/1/2000', '1/2/2000', '1/2/2000',\ndup_ts = pd.series(np.arange(5), index=dates)\nto do this is to use groupby and pass level=0:\ngrouped = dup_ts.groupby(level=0)\nresampler = ts.resample('d')\nts = pd.series(np.random.randn(4),\nindex=pd.date_range('1/1/2000', periods=4, freq='m'))\nts = pd.series(np.random.randn(len(rng)), index=rng)\nts = pd.series(np.random.randn(len(rng)), index=rng)\np = pd.period('2007', freq='a-dec')\nrng = pd.date_range('2000-01-01', periods=3, freq='m')\nts = pd.series(np.random.randn(3), index=rng)\nrng = pd.date_range('2000-01-01', periods=100, freq='d')\nts = pd.series(np.random.randn(len(rng)), index=rng)\nrng = pd.date_range('2000-01-01', periods=12, freq='t')\nlabel='right', loffset='-1s').sum()\nframe = pd.dataframe(np.random.randn(2, 4),\nindex=pd.date_range('1/1/2000', periods=2,\nframe.resample('w-thu').ffill()\nframe = pd.dataframe(np.random.randn(24, 4),\nindex=pd.period_range('1-2000', '12-2001',\nannual_frame = frame.resample('a-dec').mean()\nannual_frame.resample('q-dec').ffill()\nannual_frame.resample('q-mar').ffill()",
+      "aliases": [
+        "pandas"
+      ],
+      "provenance": [
+        {
+          "section_path": [
+            "imports"
+          ],
+          "line_start": 0,
+          "line_end": 0,
+          "text_excerpt": "longer_ts = pd.series(np.random.randn(1000),\nindex=pd.date_range('1/1/2023', periods=1000))\ndates = pd.datetimeindex(['1/1/2000', '1/2/2000', '1/2/2000',\ndup_ts = pd.series(np.arange(5), index=dates)\nto do this is to use groupby and pass level=0:\ngrouped = dup_ts.groupby(level=0)\nresampler = ts.resample('d')\nts = pd.series(np.random.randn(4),\nindex=pd.date_range('1/1/2000', periods=4, freq='m'))\nts = pd.series(np.random.randn(len(rng)), index=rng)\nts = pd.series(np.random.randn(len(rng)), index=rng)\np = pd.period('2007', freq='a-dec')\nrng = pd.date_range('2000-01-01', periods=3, freq='m')\nts = pd.series(np.random.randn(3), index=rng)\nrng = pd.date_range('2000-01-01', periods=100, freq='d')\nts = pd.series(np.random.randn(len(rng)), index=rng)\nrng = pd.date_range('2000-01-01', periods=12, freq='t')\nlabel='right', loffset='-1s').sum()\nframe = pd.dataframe(np.random.randn(2, 4),\nindex=pd.date_range('1/1/2000', periods=2,\nframe.resample('w-thu').ffill()\nframe = pd.dataframe(np.random.randn(24, 4),\nindex=pd.period_range('1-2000', '12-2001',\nannual_frame = frame.resample('a-dec').mean()\nannual_frame.resample('q-dec').ffill()\nannual_frame.resample('q-mar').ffill()"
+        }
+      ],
+      "attributes": {},
+      "confidence": 0.55,
+      "rationale": "Split concept with diverse coupling."
+    },
+    {
+      "id": "TimePeriodConversion",
+      "label": "TimePeriodConversion",
+      "type": "Concept",
+      "definition": "used.\ndelta.days\ndelta.seconds\ndup_ts\nresampler\npts = ts.to_period()\npts",
+      "aliases": [],
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Periods and Period Arithmetic",
+            "Period Frequency Conversion"
+          ],
+          "line_start": 242,
+          "line_end": 242,
+          "text_excerpt": "used.\ndelta.days\ndelta.seconds\ndup_ts\nresampler\npts = ts.to_period()\npts"
+        }
+      ],
+      "attributes": {},
+      "confidence": 0.55,
+      "rationale": "Split concept with diverse coupling."
+    },
+    {
+      "id": "date_collection",
+      "label": "date collection",
+      "type": "Concept",
+      "definition": "dates = [datetime(2021, 1, 2), datetime(2021, 1, 5),",
+      "aliases": [],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Series Basics"
+          ],
+          "line_start": 95,
+          "line_end": 95,
+          "text_excerpt": "dates = [datetime(2021, 1, 2), datetime(2021, 1, 5),"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Added to reduce distortion; under-represented lecture content."
+    },
+    {
+      "id": "UTC_timestamp_localization",
+      "label": "UTC timestamp localization",
+      "type": "Concept",
+      "definition": "stamp_utc = stamp.tz_localize('utc')",
+      "aliases": [],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling in Pandas",
+            "Operations with Time Zone\u2212Aware Timestamp Objects"
+          ],
+          "line_start": 219,
+          "line_end": 219,
+          "text_excerpt": "stamp_utc = stamp.tz_localize('utc')"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Added to reduce distortion; under-represented lecture content."
+    },
+    {
+      "id": "Weekly_Wednesday_Frequency",
+      "label": "Weekly Wednesday Frequency",
+      "type": "Concept",
+      "definition": "freq='w-wed'),",
+      "aliases": [],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion",
+            "Upsampling and Interpolation"
+          ],
+          "line_start": 282,
+          "line_end": 282,
+          "text_excerpt": "freq='w-wed'),"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Added to reduce distortion; under-represented lecture content."
+    },
+    {
+      "id": "Date_and_Time_Operations",
+      "label": "Date and Time Operations",
+      "type": "Concept",
+      "definition": "now = datetime.now()\nnow.year, now.month, now.day\ndatetime.now() - datetime(2024, 4, 20)\nnow = datetime.now()\nnow.year\nalign on the dates:",
+      "aliases": [],
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Periods and Period Arithmetic",
+            "Period Frequency Conversion"
+          ],
+          "line_start": 242,
+          "line_end": 242,
+          "text_excerpt": "now.hour\nhour = hour()\nhour"
+        }
+      ],
+      "attributes": {},
+      "confidence": 0.55,
+      "rationale": "Split concept with diverse coupling."
+    },
+    {
+      "id": "current_hour",
+      "label": "current hour",
+      "type": "Concept",
+      "definition": "now.hour\nhour = hour()\nhour",
+      "aliases": [],
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Periods and Period Arithmetic",
+            "Period Frequency Conversion"
+          ],
+          "line_start": 242,
+          "line_end": 242,
+          "text_excerpt": "now.hour\nhour = hour()\nhour"
+        }
+      ],
+      "attributes": {},
+      "confidence": 0.55,
+      "rationale": "Split concept with diverse coupling."
+    },
+    {
+      "id": "DatetimeIndexGenerationParameters",
+      "label": "DatetimeIndexGenerationParameters",
+      "type": "Concept",
+      "definition": "generating a datetimeindex with an indicated length according to a particular",
+      "aliases": [],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date Ranges, Frequencies, and Shifting",
+            "Generating Date Ranges"
+          ],
+          "line_start": 163,
+          "line_end": 163,
+          "text_excerpt": "generating a datetimeindex with an indicated length according to a particular"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Added to reduce distortion; under-represented lecture content."
+    },
+    {
+      "id": "Pandas_Series_of_Random_Normal_Data_with_Datetime_Index",
+      "label": "Pandas Series of Random Normal Data with Datetime Index",
+      "type": "Concept",
+      "definition": "ts = pd.series(np.random.randn(len(rng)), index=rng)",
+      "aliases": [],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion"
+          ],
+          "line_start": 259,
+          "line_end": 259,
+          "text_excerpt": "ts = pd.series(np.random.randn(len(rng)), index=rng)"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Added to reduce distortion; under-represented lecture content."
+    },
+    {
+      "id": "Pandas_Series_with_Random_Normal_Data_and_Datetime_Index",
+      "label": "Pandas Series with Random Normal Data and Datetime Index",
+      "type": "Concept",
+      "definition": "ts = pd.series(np.random.randn(6), index=dates)",
+      "aliases": [],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date Ranges, Frequencies, and Shifting"
+          ],
+          "line_start": 152,
+          "line_end": 152,
+          "text_excerpt": "ts = pd.series(np.random.randn(6), index=dates)"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Added to reduce distortion; under-represented lecture content."
+    },
+    {
+      "id": "Pandas_DataFrame_Creation",
+      "label": "Pandas DataFrame Creation",
+      "type": "Concept",
+      "definition": "frame = pd.dataframe(np.random.randn(24, 4),",
+      "aliases": [],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion",
+            "Resampling with Periods"
+          ],
+          "line_start": 290,
+          "line_end": 290,
+          "text_excerpt": "frame = pd.dataframe(np.random.randn(24, 4),"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Added to reduce distortion; under-represented lecture content."
+    },
+    {
+      "id": "Date_Range_Generation_2",
+      "label": "Date Range Generation",
+      "type": "Concept",
+      "definition": "pd.date_range('2000-01-01', '2000-12-01', freq='bm')\nrng = pd.date_range('2000-01-01', periods=3, freq='m')\nrng = pd.date_range('2000-01-01', periods=100, freq='d')\nrng = pd.date_range('2000-01-01', periods=12, freq='t')",
+      "aliases": [],
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion"
+          ],
+          "line_start": 258,
+          "line_end": 258,
+          "text_excerpt": "pd.date_range(start='2012-04-01', periods=20)\npd.date_range(end='2012-06-01', periods=20)"
+        }
+      ],
+      "attributes": {},
+      "confidence": 0.55,
+      "rationale": "Split concept with diverse coupling."
+    },
+    {
+      "id": "Pandas_Date_Range",
+      "label": "Pandas Date Range",
+      "type": "Concept",
+      "definition": "pd.date_range(start='2012-04-01', periods=20)\npd.date_range(end='2012-06-01', periods=20)",
+      "aliases": [],
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion"
+          ],
+          "line_start": 258,
+          "line_end": 258,
+          "text_excerpt": "pd.date_range(start='2012-04-01', periods=20)\npd.date_range(end='2012-06-01', periods=20)"
+        }
+      ],
+      "attributes": {},
+      "confidence": 0.55,
+      "rationale": "Split concept with diverse coupling."
+    },
+    {
+      "id": "Local_Timezone_Hour",
+      "label": "Local Timezone Hour",
+      "type": "Concept",
+      "definition": "now = now.astimezone(local_tz)\nnow.hour\nnow.tzinfo\nanother:",
+      "aliases": [],
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "hour = hour()\nhour\nfour_hours = hour(4)\nfour_hours"
+        }
+      ],
+      "attributes": {},
+      "confidence": 0.55,
+      "rationale": "Split concept with diverse coupling."
+    },
+    {
+      "id": "Hour",
+      "label": "Hour",
+      "type": "Concept",
+      "definition": "hour = hour()\nhour\nfour_hours = hour(4)\nfour_hours",
+      "aliases": [],
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "hour = hour()\nhour\nfour_hours = hour(4)\nfour_hours"
+        }
+      ],
+      "attributes": {},
+      "confidence": 0.55,
+      "rationale": "Split concept with diverse coupling."
+    },
+    {
+      "id": "Non_Unique_Timestamp_Data_Aggregation",
+      "label": "Non-Unique Timestamp Data Aggregation",
+      "type": "Concept",
+      "definition": "suppose you wanted to aggregate the data having non-unique timestamps. one way",
+      "aliases": [],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Series Basics",
+            "Time Series with Duplicate Indices"
+          ],
+          "line_start": 133,
+          "line_end": 133,
+          "text_excerpt": "suppose you wanted to aggregate the data having non-unique timestamps. one way"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Added to reduce distortion; under-represented lecture content."
+    },
+    {
+      "id": "Irregular_Time_Marking",
+      "label": "Irregular Time Marking",
+      "type": "Concept",
+      "definition": "also be irregular without a fixed unit of time or offset between units. how you mark",
+      "aliases": [],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series"
+          ],
+          "line_start": 8,
+          "line_end": 8,
+          "text_excerpt": "also be irregular without a fixed unit of time or offset between units. how you mark"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Added to reduce distortion; under-represented lecture content."
+    },
+    {
+      "id": "Timedelta_Calculation",
+      "label": "Timedelta Calculation",
+      "type": "Concept",
+      "definition": "datetime.now() - datetime(2024, 4, 20)",
+      "aliases": [],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date and Time Data Types and Tools"
+          ],
+          "line_start": 32,
+          "line_end": 32,
+          "text_excerpt": "datetime.now() - datetime(2024, 4, 20)"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Added to reduce distortion; under-represented lecture content."
+    },
+    {
+      "id": "DateRangeGeneration",
+      "label": "DateRangeGeneration",
+      "type": "Concept",
+      "definition": "rng = pd.date_range('3/9/2012 9:30', periods=6, freq='d')",
+      "aliases": [],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling in Pandas",
+            "Time Zone Localization and Conversion"
+          ],
+          "line_start": 210,
+          "line_end": 210,
+          "text_excerpt": "rng = pd.date_range('3/9/2012 9:30', periods=6, freq='d')"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Added to reduce distortion; under-represented lecture content."
+    },
+    {
+      "id": "pandas_Series_with_random_data_and_date_index",
+      "label": "pandas Series with random data and date index",
+      "type": "Concept",
+      "definition": "ts = pd.series(np.random.randn(6), index=dates)",
+      "aliases": [],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Series Basics"
+          ],
+          "line_start": 98,
+          "line_end": 98,
+          "text_excerpt": "ts = pd.series(np.random.randn(6), index=dates)"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Added to reduce distortion; under-represented lecture content."
+    },
+    {
+      "id": "grouped_count",
+      "label": "grouped count",
+      "type": "Concept",
+      "definition": "grouped.count()",
+      "aliases": [],
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "delta = datetime(2021, 1, 7) - datetime(2008, 6, 24, 8, 15)\nstamp = datetime(2021, 1, 3)\ndatestrs = ['7/6/2021', '8/6/2021']\nkinds of date representations. standard date formats like iso 8601 can be\ndates = [datetime(2021, 1, 2), datetime(2021, 1, 5),\ndatetime(2021, 1, 7), datetime(2021, 1, 8),\ndatetime(2021, 1, 10), datetime(2021, 1, 12)]\n'1/2/2000', '1/3/2000'])\nand generating fixed-frequency date ranges. for , you can convert\ndatetime(2021, 1, 7), datetime(2021, 1, 8),\ndatetime(2021, 1, 10), datetime(2021, 1, 12)]"
+        }
+      ],
+      "attributes": {},
+      "confidence": 0.55,
+      "rationale": "Split concept with diverse coupling."
+    },
+    {
+      "id": "Date_and_Datetime_Manipulation",
+      "label": "Date and Datetime Manipulation",
+      "type": "Concept",
+      "definition": "delta = datetime(2021, 1, 7) - datetime(2008, 6, 24, 8, 15)\nstamp = datetime(2021, 1, 3)\ndatestrs = ['7/6/2021', '8/6/2021']\nkinds of date representations. standard date formats like iso 8601 can be\ndates = [datetime(2021, 1, 2), datetime(2021, 1, 5),\ndatetime(2021, 1, 7), datetime(2021, 1, 8),\ndatetime(2021, 1, 10), datetime(2021, 1, 12)]\n'1/2/2000', '1/3/2000'])\nand generating fixed-frequency date ranges. for , you can convert\ndatetime(2021, 1, 7), datetime(2021, 1, 8),\ndatetime(2021, 1, 10), datetime(2021, 1, 12)]",
+      "aliases": [],
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "delta = datetime(2021, 1, 7) - datetime(2008, 6, 24, 8, 15)\nstamp = datetime(2021, 1, 3)\ndatestrs = ['7/6/2021', '8/6/2021']\nkinds of date representations. standard date formats like iso 8601 can be\ndates = [datetime(2021, 1, 2), datetime(2021, 1, 5),\ndatetime(2021, 1, 7), datetime(2021, 1, 8),\ndatetime(2021, 1, 10), datetime(2021, 1, 12)]\n'1/2/2000', '1/3/2000'])\nand generating fixed-frequency date ranges. for , you can convert\ndatetime(2021, 1, 7), datetime(2021, 1, 8),\ndatetime(2021, 1, 10), datetime(2021, 1, 12)]"
+        }
+      ],
+      "attributes": {},
+      "confidence": 0.55,
+      "rationale": "Split concept with diverse coupling."
+    },
+    {
+      "id": "Pandas_Series_Creation_with_Random_Data_and_Time_Index",
+      "label": "Pandas Series Creation with Random Data and Time Index",
+      "type": "Concept",
+      "definition": "longer_ts = pd.series(np.random.randn(1000),\nlist(rng)\nts = pd.series(np.random.randn(len(rng)), index=rng)\nts = pd.series(np.random.randn(len(rng)), index=rng)\nts = pd.series(np.random.randn(3), index=rng)\nts = pd.series(np.random.randn(len(rng)), index=rng)\nts = pd.series(np.arange(12), index=rng)",
+      "aliases": [],
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date Ranges, Frequencies, and Shifting"
+          ],
+          "line_start": 156,
+          "line_end": 156,
+          "text_excerpt": "longer_ts"
+        }
+      ],
+      "attributes": {},
+      "confidence": 0.55,
+      "rationale": "Split concept with diverse coupling."
+    },
+    {
+      "id": "Longer_Time_Series",
+      "label": "Longer Time Series",
+      "type": "Concept",
+      "definition": "longer_ts",
+      "aliases": [],
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date Ranges, Frequencies, and Shifting"
+          ],
+          "line_start": 156,
+          "line_end": 156,
+          "text_excerpt": "longer_ts"
+        }
+      ],
+      "attributes": {},
+      "confidence": 0.55,
+      "rationale": "Split concept with diverse coupling."
+    },
+    {
+      "id": "Fixed_frequency_date_range_generation",
+      "label": "Fixed-frequency date range generation",
+      "type": "Concept",
+      "definition": "and generating fixed-frequency date ranges. for , you can convert",
+      "aliases": [],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date Ranges, Frequencies, and Shifting"
+          ],
+          "line_start": 145,
+          "line_end": 145,
+          "text_excerpt": "and generating fixed-frequency date ranges. for , you can convert"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Added to reduce distortion; under-represented lecture content."
+    },
+    {
+      "id": "annual_frame_resampling",
+      "label": "annual_frame_resampling",
+      "type": "Concept",
+      "definition": "annual_frame = frame.resample('a-dec').mean()",
+      "aliases": [],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion",
+            "Resampling with Periods"
+          ],
+          "line_start": 295,
+          "line_end": 295,
+          "text_excerpt": "annual_frame = frame.resample('a-dec').mean()"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Added to reduce distortion; under-represented lecture content."
+    },
+    {
+      "id": "Regular_interval_data_occurrence",
+      "label": "Regular interval data occurrence",
+      "type": "Concept",
+      "definition": "frequency, which is to say that data points occur at regular intervals according to some",
+      "aliases": [],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series"
+          ],
+          "line_start": 6,
+          "line_end": 6,
+          "text_excerpt": "frequency, which is to say that data points occur at regular intervals according to some"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Added to reduce distortion; under-represented lecture content."
+    },
+    {
+      "id": "datetime_arithmetic_operations",
+      "label": "datetime arithmetic operations",
+      "type": "Concept",
+      "definition": "we can apply arithmatic operations on datetime objects:",
+      "aliases": [],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date and Time Data Types and Tools"
+          ],
+          "line_start": 30,
+          "line_end": 30,
+          "text_excerpt": "we can apply arithmatic operations on datetime objects:"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Added to reduce distortion; under-represented lecture content."
+    },
+    {
+      "id": "Datetime_String_Parsing",
+      "label": "Datetime String Parsing",
+      "type": "Concept",
+      "definition": "datetime.strptime(value, '%y-%m-%d')",
+      "aliases": [],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Exercise:"
+          ],
+          "line_start": 79,
+          "line_end": 79,
+          "text_excerpt": "datetime.strptime(value, '%y-%m-%d')"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Added to reduce distortion; under-represented lecture content."
+    },
+    {
+      "id": "ts",
+      "label": "ts",
+      "type": "Concept",
+      "definition": "ts\nts\nts\nts\nts\nts\nts\nts",
+      "aliases": [],
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion",
+            "Downsampling"
+          ],
+          "line_start": 267,
+          "line_end": 267,
+          "text_excerpt": "ts[stamp]"
+        }
+      ],
+      "attributes": {},
+      "confidence": 0.55,
+      "rationale": "Split concept with diverse coupling."
+    },
+    {
+      "id": "Stamp",
+      "label": "Stamp",
+      "type": "Concept",
+      "definition": "ts[stamp]",
+      "aliases": [],
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion",
+            "Downsampling"
+          ],
+          "line_start": 267,
+          "line_end": 267,
+          "text_excerpt": "ts[stamp]"
+        }
+      ],
+      "attributes": {},
+      "confidence": 0.55,
+      "rationale": "Split concept with diverse coupling."
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge1",
+      "source": "1",
+      "target": "Pandas_time_series_data_manipulation",
+      "relation": "uses",
+      "provenance": [
+        {
+          "section_path": [
+            "Time Series Basics"
+          ],
+          "line_start": 0,
+          "line_end": 0,
+          "text_excerpt": "A basic kind of time series object in pandas is a Series indexed by timestamps."
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "Time series data is often manipulated using the Pandas library, establishing a strong usage relation.",
+      "definition": "Time Series Data uses Pandas"
+    },
+    {
+      "id": "edge1",
+      "source": "1",
+      "target": "Pandas_Time_Series_Resampling",
+      "relation": "uses",
+      "provenance": [
+        {
+          "section_path": [
+            "Time Series Basics"
+          ],
+          "line_start": 0,
+          "line_end": 0,
+          "text_excerpt": "A basic kind of time series object in pandas is a Series indexed by timestamps."
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "Time series data is often manipulated using the Pandas library, establishing a strong usage relation.",
+      "definition": "Time Series Data uses Pandas"
+    },
+    {
+      "id": "edge2",
+      "source": "Pandas_time_series_data_manipulation",
+      "target": "3",
+      "relation": "dependsOn",
+      "provenance": [
+        {
+          "section_path": [
+            "Date and Time Data Types and Tools"
+          ],
+          "line_start": 0,
+          "line_end": 0,
+          "text_excerpt": "The datetime, time, and calendar modules are the main places to start."
+        }
+      ],
+      "confidence": 0.8,
+      "rationale": "Pandas operations often rely on datetime for handling date and time data.",
+      "definition": "Pandas dependsOn Datetime"
+    },
+    {
+      "id": "edge2",
+      "source": "Pandas_Time_Series_Resampling",
+      "target": "3",
+      "relation": "dependsOn",
+      "provenance": [
+        {
+          "section_path": [
+            "Date and Time Data Types and Tools"
+          ],
+          "line_start": 0,
+          "line_end": 0,
+          "text_excerpt": "The datetime, time, and calendar modules are the main places to start."
+        }
+      ],
+      "confidence": 0.8,
+      "rationale": "Pandas operations often rely on datetime for handling date and time data.",
+      "definition": "Pandas dependsOn Datetime"
+    },
+    {
+      "id": "edge3",
+      "source": "1",
+      "target": "4",
+      "relation": "relatedTo",
+      "provenance": [
+        {
+          "section_path": [
+            "Time Zone Handling"
+          ],
+          "line_start": 0,
+          "line_end": 0,
+          "text_excerpt": "Time zones are expressed as offsets from UTC..."
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "Time series analysis often requires adequate handling of time zones to ensure accurate representation of time data.",
+      "definition": "Time Series Data relatedTo Time Zone Handling"
+    },
+    {
+      "id": "edge4",
+      "source": "1",
+      "target": "5",
+      "relation": "hasProperty",
+      "provenance": [
+        {
+          "section_path": [
+            "Periods and Period Arithmetic"
+          ],
+          "line_start": 0,
+          "line_end": 0,
+          "text_excerpt": "The Period class represents this data type, requiring a string or integer and a frequency."
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "Understanding periods is essential for effectively working with time series data.",
+      "definition": "Time Series Data hasProperty Timespan"
+    },
+    {
+      "id": "e_strftime_operation_uses_2",
+      "source": "strftime_operation",
+      "target": "Pandas_time_series_data_manipulation",
+      "relation": "uses",
+      "definition": "strftime operation uses Pandas",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling",
+            "Converting Between String and Datetime"
+          ],
+          "line_start": 70,
+          "line_end": 70,
+          "text_excerpt": "stamp.strftime('%y-%m-%d')"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The example provided for \"strftime operation\" (`strftime('%y-%m-%d')`) is a common operation within the \"Pandas\" library for formatting datetime objects."
+    },
+    {
+      "id": "e_strftime_operation_uses_2",
+      "source": "strftime_operation",
+      "target": "Pandas_Time_Series_Resampling",
+      "relation": "uses",
+      "definition": "strftime operation uses Pandas",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling",
+            "Converting Between String and Datetime"
+          ],
+          "line_start": 70,
+          "line_end": 70,
+          "text_excerpt": "stamp.strftime('%y-%m-%d')"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The example provided for \"strftime operation\" (`strftime('%y-%m-%d')`) is a common operation within the \"Pandas\" library for formatting datetime objects."
+    },
+    {
+      "id": "e_strftime_operation_usedBy_3",
+      "source": "strftime_operation",
+      "target": "3",
+      "relation": "usedBy",
+      "definition": "strftime operation usedBy Datetime",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling",
+            "Converting Between String and Datetime"
+          ],
+          "line_start": 70,
+          "line_end": 70,
+          "text_excerpt": "stamp.strftime('%y-%m-%d')"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The \"strftime operation\" is a method used with Python's datetime objects to format them into strings."
+    },
+    {
+      "id": "e_Textual_Statement_relatedTo_1",
+      "source": "ts",
+      "target": "1",
+      "relation": "relatedTo",
+      "definition": "Textual Statement relatedTo Time Series Data",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion",
+            "Downsampling"
+          ],
+          "line_start": 267,
+          "line_end": 267,
+          "text_excerpt": "ts"
+        }
+      ],
+      "confidence": 0.7,
+      "rationale": "A textual statement could be used to describe or annotate time series data, providing context or interpretations."
+    },
+    {
+      "id": "e_Textual_Statement_relatedTo_1",
+      "source": "Stamp",
+      "target": "1",
+      "relation": "relatedTo",
+      "definition": "Textual Statement relatedTo Time Series Data",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion",
+            "Downsampling"
+          ],
+          "line_start": 267,
+          "line_end": 267,
+          "text_excerpt": "ts"
+        }
+      ],
+      "confidence": 0.7,
+      "rationale": "A textual statement could be used to describe or annotate time series data, providing context or interpretations."
+    },
+    {
+      "id": "e_Textual_Statement_relatedTo_4",
+      "source": "ts",
+      "target": "4",
+      "relation": "relatedTo",
+      "definition": "Textual Statement relatedTo Time Zone Handling",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion",
+            "Downsampling"
+          ],
+          "line_start": 267,
+          "line_end": 267,
+          "text_excerpt": "ts"
+        }
+      ],
+      "confidence": 0.7,
+      "rationale": "Textual statements can be used to explain or document time zone handling strategies or issues."
+    },
+    {
+      "id": "e_Textual_Statement_relatedTo_4",
+      "source": "Stamp",
+      "target": "4",
+      "relation": "relatedTo",
+      "definition": "Textual Statement relatedTo Time Zone Handling",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion",
+            "Downsampling"
+          ],
+          "line_start": 267,
+          "line_end": 267,
+          "text_excerpt": "ts"
+        }
+      ],
+      "confidence": 0.7,
+      "rationale": "Textual statements can be used to explain or document time zone handling strategies or issues."
+    },
+    {
+      "id": "e_Patient_synonymOf_Textual_Statement",
+      "source": "Patient",
+      "target": "ts",
+      "relation": "synonymOf",
+      "definition": "Patient synonymOf Textual Statement",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Periods and Period Arithmetic",
+            "Converting Timestamps to Periods (and Back)"
+          ],
+          "line_start": 255,
+          "line_end": 255,
+          "text_excerpt": "pts"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"pts\" is explicitly given as an abbreviation for \"Patient\"."
+    },
+    {
+      "id": "e_Patient_synonymOf_Textual_Statement",
+      "source": "Patient",
+      "target": "Stamp",
+      "relation": "synonymOf",
+      "definition": "Patient synonymOf Textual Statement",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Periods and Period Arithmetic",
+            "Converting Timestamps to Periods (and Back)"
+          ],
+          "line_start": 255,
+          "line_end": 255,
+          "text_excerpt": "pts"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"pts\" is explicitly given as an abbreviation for \"Patient\"."
+    },
+    {
+      "id": "e_Paragraph_synonymOf_Textual_Statement",
+      "source": "Date_and_Time_Operations",
+      "target": "ts",
+      "relation": "synonymOf",
+      "definition": "'Paragraph' synonymOf Textual Statement",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Periods and Period Arithmetic",
+            "Period Frequency Conversion"
+          ],
+          "line_start": 242,
+          "line_end": 242,
+          "text_excerpt": "p"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"Paragraph\" is a type of \"Textual Statement\" where the definition \"p\" is a shorthand for a paragraph."
+    },
+    {
+      "id": "e_Paragraph_synonymOf_Textual_Statement",
+      "source": "Date_and_Time_Operations",
+      "target": "Stamp",
+      "relation": "synonymOf",
+      "definition": "'Paragraph' synonymOf Textual Statement",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Periods and Period Arithmetic",
+            "Period Frequency Conversion"
+          ],
+          "line_start": 242,
+          "line_end": 242,
+          "text_excerpt": "p"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"Paragraph\" is a type of \"Textual Statement\" where the definition \"p\" is a shorthand for a paragraph."
+    },
+    {
+      "id": "e_Paragraph_synonymOf_Textual_Statement",
+      "source": "current_hour",
+      "target": "ts",
+      "relation": "synonymOf",
+      "definition": "'Paragraph' synonymOf Textual Statement",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Periods and Period Arithmetic",
+            "Period Frequency Conversion"
+          ],
+          "line_start": 242,
+          "line_end": 242,
+          "text_excerpt": "p"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"Paragraph\" is a type of \"Textual Statement\" where the definition \"p\" is a shorthand for a paragraph."
+    },
+    {
+      "id": "e_Paragraph_synonymOf_Textual_Statement",
+      "source": "current_hour",
+      "target": "Stamp",
+      "relation": "synonymOf",
+      "definition": "'Paragraph' synonymOf Textual Statement",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Periods and Period Arithmetic",
+            "Period Frequency Conversion"
+          ],
+          "line_start": 242,
+          "line_end": 242,
+          "text_excerpt": "p"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"Paragraph\" is a type of \"Textual Statement\" where the definition \"p\" is a shorthand for a paragraph."
+    },
+    {
+      "id": "e_Paragraph_synonymOf_Textual_Statement",
+      "source": "TimePeriodConversion",
+      "target": "ts",
+      "relation": "synonymOf",
+      "definition": "'Paragraph' synonymOf Textual Statement",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Periods and Period Arithmetic",
+            "Period Frequency Conversion"
+          ],
+          "line_start": 242,
+          "line_end": 242,
+          "text_excerpt": "p"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"Paragraph\" is a type of \"Textual Statement\" where the definition \"p\" is a shorthand for a paragraph."
+    },
+    {
+      "id": "e_Paragraph_synonymOf_Textual_Statement",
+      "source": "TimePeriodConversion",
+      "target": "Stamp",
+      "relation": "synonymOf",
+      "definition": "'Paragraph' synonymOf Textual Statement",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Periods and Period Arithmetic",
+            "Period Frequency Conversion"
+          ],
+          "line_start": 242,
+          "line_end": 242,
+          "text_excerpt": "p"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"Paragraph\" is a type of \"Textual Statement\" where the definition \"p\" is a shorthand for a paragraph."
+    },
+    {
+      "id": "e_Timestamp_creation_uses_2",
+      "source": "Timestamp_creation",
+      "target": "Pandas_time_series_data_manipulation",
+      "relation": "uses",
+      "definition": "Timestamp creation uses Pandas",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling in Pandas",
+            "Operations with Time Zone\u2212Aware Timestamp Objects"
+          ],
+          "line_start": 218,
+          "line_end": 218,
+          "text_excerpt": "stamp = pd.timestamp('2011-03-12 04:00')"
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "The definition of \"Timestamp creation\" explicitly uses `pd.timestamp`, indicating that \"Pandas\" (which is aliased as `pd` in the example) is used."
+    },
+    {
+      "id": "e_Timestamp_creation_uses_2",
+      "source": "Timestamp_creation",
+      "target": "Pandas_Time_Series_Resampling",
+      "relation": "uses",
+      "definition": "Timestamp creation uses Pandas",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling in Pandas",
+            "Operations with Time Zone\u2212Aware Timestamp Objects"
+          ],
+          "line_start": 218,
+          "line_end": 218,
+          "text_excerpt": "stamp = pd.timestamp('2011-03-12 04:00')"
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "The definition of \"Timestamp creation\" explicitly uses `pd.timestamp`, indicating that \"Pandas\" (which is aliased as `pd` in the example) is used."
+    },
+    {
+      "id": "e_date_collection_uses_Pandas_time_series_data_manipulation",
+      "source": "date_collection",
+      "target": "Pandas_time_series_data_manipulation",
+      "relation": "uses",
+      "definition": "date collection uses Pandas time series data manipulation",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Series Basics"
+          ],
+          "line_start": 95,
+          "line_end": 95,
+          "text_excerpt": "dates = [datetime(2021, 1, 2), datetime(2021, 1, 5),"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The example definition for \"date collection\" uses Python's `datetime` object, which is a core component of Pandas for time series manipulation."
+    },
+    {
+      "id": "e_tzinfo_relatedTo_1",
+      "source": "Local_Timezone_Hour",
+      "target": "1",
+      "relation": "relatedTo",
+      "definition": "tzinfo relatedTo Time Series Data",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "for tz in pytz.common_timezones:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The concept \"tzinfo\" is a direct component used within time zone handling, which is crucial for time series data."
+    },
+    {
+      "id": "e_tzinfo_relatedTo_1",
+      "source": "Hour",
+      "target": "1",
+      "relation": "relatedTo",
+      "definition": "tzinfo relatedTo Time Series Data",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "for tz in pytz.common_timezones:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The concept \"tzinfo\" is a direct component used within time zone handling, which is crucial for time series data."
+    },
+    {
+      "id": "e_tzinfo_relatedTo_1",
+      "source": "grouped_count",
+      "target": "1",
+      "relation": "relatedTo",
+      "definition": "tzinfo relatedTo Time Series Data",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "for tz in pytz.common_timezones:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The concept \"tzinfo\" is a direct component used within time zone handling, which is crucial for time series data."
+    },
+    {
+      "id": "e_tzinfo_relatedTo_1",
+      "source": "Date_and_Datetime_Manipulation",
+      "target": "1",
+      "relation": "relatedTo",
+      "definition": "tzinfo relatedTo Time Series Data",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "for tz in pytz.common_timezones:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The concept \"tzinfo\" is a direct component used within time zone handling, which is crucial for time series data."
+    },
+    {
+      "id": "e_tzinfo_uses_3",
+      "source": "Local_Timezone_Hour",
+      "target": "3",
+      "relation": "uses",
+      "definition": "tzinfo uses Datetime",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "for tz in pytz.common_timezones:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"tzinfo\" is a component that provides timezone information for datetime objects."
+    },
+    {
+      "id": "e_tzinfo_uses_3",
+      "source": "Hour",
+      "target": "3",
+      "relation": "uses",
+      "definition": "tzinfo uses Datetime",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "for tz in pytz.common_timezones:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"tzinfo\" is a component that provides timezone information for datetime objects."
+    },
+    {
+      "id": "e_tzinfo_uses_3",
+      "source": "grouped_count",
+      "target": "3",
+      "relation": "uses",
+      "definition": "tzinfo uses Datetime",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "for tz in pytz.common_timezones:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"tzinfo\" is a component that provides timezone information for datetime objects."
+    },
+    {
+      "id": "e_tzinfo_uses_3",
+      "source": "Date_and_Datetime_Manipulation",
+      "target": "3",
+      "relation": "uses",
+      "definition": "tzinfo uses Datetime",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "for tz in pytz.common_timezones:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"tzinfo\" is a component that provides timezone information for datetime objects."
+    },
+    {
+      "id": "e_tzinfo_relatedTo_4",
+      "source": "Local_Timezone_Hour",
+      "target": "4",
+      "relation": "relatedTo",
+      "definition": "tzinfo relatedTo Time Zone Handling",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "for tz in pytz.common_timezones:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"tzinfo\" is directly related to \"Time Zone Handling\" as it provides the timezone data."
+    },
+    {
+      "id": "e_tzinfo_relatedTo_4",
+      "source": "Hour",
+      "target": "4",
+      "relation": "relatedTo",
+      "definition": "tzinfo relatedTo Time Zone Handling",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "for tz in pytz.common_timezones:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"tzinfo\" is directly related to \"Time Zone Handling\" as it provides the timezone data."
+    },
+    {
+      "id": "e_tzinfo_relatedTo_4",
+      "source": "grouped_count",
+      "target": "4",
+      "relation": "relatedTo",
+      "definition": "tzinfo relatedTo Time Zone Handling",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "for tz in pytz.common_timezones:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"tzinfo\" is directly related to \"Time Zone Handling\" as it provides the timezone data."
+    },
+    {
+      "id": "e_tzinfo_relatedTo_4",
+      "source": "Date_and_Datetime_Manipulation",
+      "target": "4",
+      "relation": "relatedTo",
+      "definition": "tzinfo relatedTo Time Zone Handling",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "for tz in pytz.common_timezones:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"tzinfo\" is directly related to \"Time Zone Handling\" as it provides the timezone data."
+    },
+    {
+      "id": "e_tzinfo_hasProperty_Current_Date_and_Time_Information",
+      "source": "Local_Timezone_Hour",
+      "target": "Date_and_Time_Operations",
+      "relation": "hasProperty",
+      "definition": "tzinfo hasProperty Current Date and Time Information",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "for tz in pytz.common_timezones:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The definition for \"Current Date and Time Information\" explicitly shows `now.tzinfo`, indicating that tzinfo is a property of current date and time objects."
+    },
+    {
+      "id": "e_tzinfo_hasProperty_Current_Date_and_Time_Information",
+      "source": "Hour",
+      "target": "Date_and_Time_Operations",
+      "relation": "hasProperty",
+      "definition": "tzinfo hasProperty Current Date and Time Information",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "for tz in pytz.common_timezones:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The definition for \"Current Date and Time Information\" explicitly shows `now.tzinfo`, indicating that tzinfo is a property of current date and time objects."
+    },
+    {
+      "id": "e_tzinfo_hasProperty_Current_Date_and_Time_Information",
+      "source": "grouped_count",
+      "target": "Date_and_Time_Operations",
+      "relation": "hasProperty",
+      "definition": "tzinfo hasProperty Current Date and Time Information",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "for tz in pytz.common_timezones:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The definition for \"Current Date and Time Information\" explicitly shows `now.tzinfo`, indicating that tzinfo is a property of current date and time objects."
+    },
+    {
+      "id": "e_tzinfo_hasProperty_Current_Date_and_Time_Information",
+      "source": "Date_and_Datetime_Manipulation",
+      "target": "Date_and_Time_Operations",
+      "relation": "hasProperty",
+      "definition": "tzinfo hasProperty Current Date and Time Information",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "for tz in pytz.common_timezones:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The definition for \"Current Date and Time Information\" explicitly shows `now.tzinfo`, indicating that tzinfo is a property of current date and time objects."
+    },
+    {
+      "id": "e_tzinfo_hasProperty_Current_Date_and_Time_Information",
+      "source": "Local_Timezone_Hour",
+      "target": "current_hour",
+      "relation": "hasProperty",
+      "definition": "tzinfo hasProperty Current Date and Time Information",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "for tz in pytz.common_timezones:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The definition for \"Current Date and Time Information\" explicitly shows `now.tzinfo`, indicating that tzinfo is a property of current date and time objects."
+    },
+    {
+      "id": "e_tzinfo_hasProperty_Current_Date_and_Time_Information",
+      "source": "Hour",
+      "target": "current_hour",
+      "relation": "hasProperty",
+      "definition": "tzinfo hasProperty Current Date and Time Information",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "for tz in pytz.common_timezones:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The definition for \"Current Date and Time Information\" explicitly shows `now.tzinfo`, indicating that tzinfo is a property of current date and time objects."
+    },
+    {
+      "id": "e_tzinfo_hasProperty_Current_Date_and_Time_Information",
+      "source": "grouped_count",
+      "target": "current_hour",
+      "relation": "hasProperty",
+      "definition": "tzinfo hasProperty Current Date and Time Information",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "for tz in pytz.common_timezones:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The definition for \"Current Date and Time Information\" explicitly shows `now.tzinfo`, indicating that tzinfo is a property of current date and time objects."
+    },
+    {
+      "id": "e_tzinfo_hasProperty_Current_Date_and_Time_Information",
+      "source": "Date_and_Datetime_Manipulation",
+      "target": "current_hour",
+      "relation": "hasProperty",
+      "definition": "tzinfo hasProperty Current Date and Time Information",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling"
+          ],
+          "line_start": 62,
+          "line_end": 62,
+          "text_excerpt": "for tz in pytz.common_timezones:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The definition for \"Current Date and Time Information\" explicitly shows `now.tzinfo`, indicating that tzinfo is a property of current date and time objects."
+    },
+    {
+      "id": "e_UTC_timestamp_localization_uses_Pandas_time_series_data_manipulation",
+      "source": "UTC_timestamp_localization",
+      "target": "Pandas_time_series_data_manipulation",
+      "relation": "uses",
+      "definition": "UTC timestamp localization uses Pandas time series data manipulation",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling in Pandas",
+            "Operations with Time Zone\u2212Aware Timestamp Objects"
+          ],
+          "line_start": 219,
+          "line_end": 219,
+          "text_excerpt": "stamp_utc = stamp.tz_localize('utc')"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The definition of \"UTC timestamp localization\" contains \"stamp_utc = stamp.tz_localize('utc')\", which is a common operation within Pandas for time series data manipulation."
+    },
+    {
+      "id": "e_Date_Range_Generation_isA_1",
+      "source": "Date_Range_Generation_2",
+      "target": "1",
+      "relation": "isA",
+      "definition": "Date Range Generation isA Time Series Data",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion"
+          ],
+          "line_start": 258,
+          "line_end": 258,
+          "text_excerpt": "rng = pd.date_range('2000-01-01', periods=100, freq='d')"
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "\"Date Range Generation\" is a specific type of \"Time Series Data\" as it creates a sequence of data points indexed in time order."
+    },
+    {
+      "id": "e_Date_Range_Generation_isA_1",
+      "source": "Pandas_Date_Range",
+      "target": "1",
+      "relation": "isA",
+      "definition": "Date Range Generation isA Time Series Data",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion"
+          ],
+          "line_start": 258,
+          "line_end": 258,
+          "text_excerpt": "rng = pd.date_range('2000-01-01', periods=100, freq='d')"
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "\"Date Range Generation\" is a specific type of \"Time Series Data\" as it creates a sequence of data points indexed in time order."
+    },
+    {
+      "id": "e_Weekly_Wednesday_Frequency_relatedTo_Pandas_time_series_data_manipulation",
+      "source": "Weekly_Wednesday_Frequency",
+      "target": "Pandas_time_series_data_manipulation",
+      "relation": "relatedTo",
+      "definition": "Weekly Wednesday Frequency relatedTo Pandas time series data manipulation",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion",
+            "Upsampling and Interpolation"
+          ],
+          "line_start": 282,
+          "line_end": 282,
+          "text_excerpt": "freq='w-wed'),"
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "The new concept \"Weekly Wednesday Frequency\" is a specific frequency parameter used within the Pandas library for time series data manipulation."
+    },
+    {
+      "id": "e_Weekly_Wednesday_Frequency_relatedTo_Pandas_Time_Series_Resampling",
+      "source": "Weekly_Wednesday_Frequency",
+      "target": "Pandas_Time_Series_Resampling",
+      "relation": "relatedTo",
+      "definition": "Weekly Wednesday Frequency relatedTo Pandas Time Series Resampling",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion",
+            "Upsampling and Interpolation"
+          ],
+          "line_start": 282,
+          "line_end": 282,
+          "text_excerpt": "freq='w-wed'),"
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "The new concept \"Weekly Wednesday Frequency\" (freq='w-wed') is a frequency string that is directly used in Pandas' time series resampling operations, as shown in examples like `frame.resample('w-thu')`."
+    },
+    {
+      "id": "e_Weekly_Wednesday_Frequency_relatedTo_Date_Range_Generation",
+      "source": "Weekly_Wednesday_Frequency",
+      "target": "Date_Range_Generation_2",
+      "relation": "relatedTo",
+      "definition": "Weekly Wednesday Frequency relatedTo Date Range Generation",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion",
+            "Upsampling and Interpolation"
+          ],
+          "line_start": 282,
+          "line_end": 282,
+          "text_excerpt": "freq='w-wed'),"
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "The new concept \"Weekly Wednesday Frequency\" is a type of frequency parameter that can be used in Pandas' `date_range` function to generate sequences of dates with a specific weekly pattern."
+    },
+    {
+      "id": "e_Weekly_Wednesday_Frequency_relatedTo_Date_Range_Generation",
+      "source": "Weekly_Wednesday_Frequency",
+      "target": "Pandas_Date_Range",
+      "relation": "relatedTo",
+      "definition": "Weekly Wednesday Frequency relatedTo Date Range Generation",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion",
+            "Upsampling and Interpolation"
+          ],
+          "line_start": 282,
+          "line_end": 282,
+          "text_excerpt": "freq='w-wed'),"
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "The new concept \"Weekly Wednesday Frequency\" is a type of frequency parameter that can be used in Pandas' `date_range` function to generate sequences of dates with a specific weekly pattern."
+    },
+    {
+      "id": "e_DatetimeIndexGenerationParameters_uses_DatetimeIndexGenerationParameters",
+      "source": "DatetimeIndexGenerationParameters",
+      "target": "DatetimeIndexGenerationParameters",
+      "relation": "uses",
+      "definition": "DatetimeIndexGenerationParameters uses DatetimeIndexGenerationParameters",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date Ranges, Frequencies, and Shifting",
+            "Generating Date Ranges"
+          ],
+          "line_start": 163,
+          "line_end": 163,
+          "text_excerpt": "generating a datetimeindex with an indicated length according to a particular"
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "The definition of \"DatetimeIndexGenerationParameters\" indicates it's for \"generating a datetimeindex\", and \"Pandas_time_series_data_manipulation\" is a broad category that encompasses such generation."
+    },
+    {
+      "id": "e_Pandas_Series_of_Random_Normal_Data_with_Datetime_Index_isA_1",
+      "source": "Pandas_Series_of_Random_Normal_Data_with_Datetime_Index",
+      "target": "1",
+      "relation": "isA",
+      "definition": "Pandas Series of Random Normal Data with Datetime Index isA Time Series Data",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion"
+          ],
+          "line_start": 259,
+          "line_end": 259,
+          "text_excerpt": "ts = pd.series(np.random.randn(len(rng)), index=rng)"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The new concept is a specific type of \"Time Series Data\" as it consists of data points indexed by time (a `DatetimeIndex`)."
+    },
+    {
+      "id": "e_Pandas_Series_of_Random_Normal_Data_with_Datetime_Index_isA_Pandas_time_series_data_manipulation",
+      "source": "Pandas_Series_of_Random_Normal_Data_with_Datetime_Index",
+      "target": "Pandas_time_series_data_manipulation",
+      "relation": "isA",
+      "definition": "Pandas Series of Random Normal Data with Datetime Index isA Pandas time series data manipulation",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion"
+          ],
+          "line_start": 259,
+          "line_end": 259,
+          "text_excerpt": "ts = pd.series(np.random.randn(len(rng)), index=rng)"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The creation of a Pandas Series with a DatetimeIndex is a core operation within \"Pandas time series data manipulation\"."
+    },
+    {
+      "id": "e_Daily_Resampling_of_Time_Series_Data_relatedTo_TimePeriodConversion",
+      "source": "Pandas_Series_Creation_with_Random_Data_and_Time_Index",
+      "target": "TimePeriodConversion",
+      "relation": "relatedTo",
+      "definition": "Daily Resampling of Time Series Data relatedTo TimePeriodConversion",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date Ranges, Frequencies, and Shifting"
+          ],
+          "line_start": 156,
+          "line_end": 156,
+          "text_excerpt": "ts.resample('d')"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Heuristic relation based on semantic proximity."
+    },
+    {
+      "id": "e_Daily_Resampling_of_Time_Series_Data_relatedTo_TimePeriodConversion",
+      "source": "Longer_Time_Series",
+      "target": "TimePeriodConversion",
+      "relation": "relatedTo",
+      "definition": "Daily Resampling of Time Series Data relatedTo TimePeriodConversion",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date Ranges, Frequencies, and Shifting"
+          ],
+          "line_start": 156,
+          "line_end": 156,
+          "text_excerpt": "ts.resample('d')"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Heuristic relation based on semantic proximity."
+    },
+    {
+      "id": "e_Pandas_Series_with_Random_Normal_Data_and_Datetime_Index_isA_1",
+      "source": "Pandas_Series_with_Random_Normal_Data_and_Datetime_Index",
+      "target": "1",
+      "relation": "isA",
+      "definition": "Pandas Series with Random Normal Data and Datetime Index isA Time Series Data",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date Ranges, Frequencies, and Shifting"
+          ],
+          "line_start": 152,
+          "line_end": 152,
+          "text_excerpt": "ts = pd.series(np.random.randn(6), index=dates)"
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "The new concept is a specific type of Time Series Data, characterized by its structure and data source."
+    },
+    {
+      "id": "e_Pandas_Series_with_Random_Normal_Data_and_Datetime_Index_equivalentTo_Pandas_Series_of_Random_Normal_Data_with_Datetime_Index",
+      "source": "Pandas_Series_with_Random_Normal_Data_and_Datetime_Index",
+      "target": "Pandas_Series_of_Random_Normal_Data_with_Datetime_Index",
+      "relation": "equivalentTo",
+      "definition": "Pandas Series with Random Normal Data and Datetime Index equivalentTo Pandas Series of Random Normal Data with Datetime Index",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date Ranges, Frequencies, and Shifting"
+          ],
+          "line_start": 152,
+          "line_end": 152,
+          "text_excerpt": "ts = pd.series(np.random.randn(6), index=dates)"
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "The new concept is essentially the same as this existing concept, differing only in the specific definition of the index generation."
+    },
+    {
+      "id": "e_Pandas_DataFrame_Creation_uses_Pandas_time_series_data_manipulation",
+      "source": "Pandas_DataFrame_Creation",
+      "target": "Pandas_time_series_data_manipulation",
+      "relation": "uses",
+      "definition": "Pandas DataFrame Creation uses Pandas time series data manipulation",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion",
+            "Resampling with Periods"
+          ],
+          "line_start": 290,
+          "line_end": 290,
+          "text_excerpt": "frame = pd.dataframe(np.random.randn(24, 4),"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The new node describes the creation of a Pandas DataFrame, which is a core data structure used extensively in Pandas for time series data manipulation."
+    },
+    {
+      "id": "e_Pandas_DataFrame_Creation_uses_Pandas_Time_Series_Resampling",
+      "source": "Pandas_DataFrame_Creation",
+      "target": "Pandas_Time_Series_Resampling",
+      "relation": "uses",
+      "definition": "Pandas DataFrame Creation uses Pandas Time Series Resampling",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion",
+            "Resampling with Periods"
+          ],
+          "line_start": 290,
+          "line_end": 290,
+          "text_excerpt": "frame = pd.dataframe(np.random.randn(24, 4),"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The definition of the new node `frame = pd.dataframe(np.random.randn(24, 4),` is directly present within the definition of `Pandas_Time_Series_Resampling`, indicating a strong usage relationship."
+    },
+    {
+      "id": "e_Non_Unique_Timestamp_Data_Aggregation_relatedTo_1",
+      "source": "Non_Unique_Timestamp_Data_Aggregation",
+      "target": "1",
+      "relation": "relatedTo",
+      "definition": "Non-Unique Timestamp Data Aggregation relatedTo Time Series Data",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Series Basics",
+            "Time Series with Duplicate Indices"
+          ],
+          "line_start": 133,
+          "line_end": 133,
+          "text_excerpt": "suppose you wanted to aggregate the data having non-unique timestamps. one way"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Heuristic relation based on semantic proximity."
+    },
+    {
+      "id": "e_Irregular_Time_Marking_relatedTo_1",
+      "source": "Irregular_Time_Marking",
+      "target": "1",
+      "relation": "relatedTo",
+      "definition": "Irregular Time Marking relatedTo Time Series Data",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series"
+          ],
+          "line_start": 8,
+          "line_end": 8,
+          "text_excerpt": "also be irregular without a fixed unit of time or offset between units. how you mark"
+        }
+      ],
+      "confidence": 0.8,
+      "rationale": "\"Irregular Time Marking\" describes a characteristic of how time is represented or handled, which is relevant to \"Time Series Data\" as time is fundamental to its definition."
+    },
+    {
+      "id": "e_Irregular_Time_Marking_relatedTo_Pandas_time_series_data_manipulation",
+      "source": "Irregular_Time_Marking",
+      "target": "Pandas_time_series_data_manipulation",
+      "relation": "relatedTo",
+      "definition": "Irregular Time Marking relatedTo Pandas time series data manipulation",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series"
+          ],
+          "line_start": 8,
+          "line_end": 8,
+          "text_excerpt": "also be irregular without a fixed unit of time or offset between units. how you mark"
+        }
+      ],
+      "confidence": 0.8,
+      "rationale": "\"Irregular Time Marking\" is a concept that would be encountered and potentially need to be handled during \"Pandas time series data manipulation.\""
+    },
+    {
+      "id": "e_Timedelta_Calculation_relatedTo_Date_and_Time_Operations",
+      "source": "Timedelta_Calculation",
+      "target": "Date_and_Time_Operations",
+      "relation": "relatedTo",
+      "definition": "Timedelta Calculation relatedTo Date and Time Operations",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date and Time Data Types and Tools"
+          ],
+          "line_start": 32,
+          "line_end": 32,
+          "text_excerpt": "datetime.now() - datetime(2024, 4, 20)"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Heuristic relation based on semantic proximity."
+    },
+    {
+      "id": "e_DateRangeGeneration_isA_Date_range",
+      "source": "DateRangeGeneration",
+      "target": "grouped_count",
+      "relation": "isA",
+      "definition": "DateRangeGeneration isA Date range",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling in Pandas",
+            "Time Zone Localization and Conversion"
+          ],
+          "line_start": 210,
+          "line_end": 210,
+          "text_excerpt": "rng = pd.date_range('3/9/2012 9:30', periods=6, freq='d')"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The new concept \"DateRangeGeneration\" explicitly uses `pd.date_range`, which is a method for generating a date range. The existing concept \"Date_range\" refers to a collection of dates, which is a direct outcome or representation of generating a date range."
+    },
+    {
+      "id": "e_DateRangeGeneration_isA_Date_range",
+      "source": "DateRangeGeneration",
+      "target": "Date_and_Datetime_Manipulation",
+      "relation": "isA",
+      "definition": "DateRangeGeneration isA Date range",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling in Pandas",
+            "Time Zone Localization and Conversion"
+          ],
+          "line_start": 210,
+          "line_end": 210,
+          "text_excerpt": "rng = pd.date_range('3/9/2012 9:30', periods=6, freq='d')"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The new concept \"DateRangeGeneration\" explicitly uses `pd.date_range`, which is a method for generating a date range. The existing concept \"Date_range\" refers to a collection of dates, which is a direct outcome or representation of generating a date range."
+    },
+    {
+      "id": "e_DateRangeGeneration_uses_Pandas_time_series_data_manipulation",
+      "source": "DateRangeGeneration",
+      "target": "Pandas_time_series_data_manipulation",
+      "relation": "uses",
+      "definition": "DateRangeGeneration uses Pandas time series data manipulation",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling in Pandas",
+            "Time Zone Localization and Conversion"
+          ],
+          "line_start": 210,
+          "line_end": 210,
+          "text_excerpt": "rng = pd.date_range('3/9/2012 9:30', periods=6, freq='d')"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The new concept \"DateRangeGeneration\" is defined using `pd.date_range`, which is a fundamental function within the pandas library for time series manipulation."
+    },
+    {
+      "id": "e_DateRangeGeneration_relatedTo_Pandas_Date_Range",
+      "source": "DateRangeGeneration",
+      "target": "Pandas_Date_Range",
+      "relation": "relatedTo",
+      "definition": "DateRangeGeneration relatedTo Pandas Date Range",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling in Pandas",
+            "Time Zone Localization and Conversion"
+          ],
+          "line_start": 210,
+          "line_end": 210,
+          "text_excerpt": "rng = pd.date_range('3/9/2012 9:30', periods=6, freq='d')"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The new concept \"DateRangeGeneration\" is a specific instance or usage of the more general concept \"Pandas_Date_Range\", as both are related to creating date ranges using pandas."
+    },
+    {
+      "id": "e_DateRangeGeneration_relatedTo_Date_Range_Generation_2",
+      "source": "DateRangeGeneration",
+      "target": "Date_Range_Generation_2",
+      "relation": "relatedTo",
+      "definition": "DateRangeGeneration relatedTo Date Range Generation",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Zone Handling in Pandas",
+            "Time Zone Localization and Conversion"
+          ],
+          "line_start": 210,
+          "line_end": 210,
+          "text_excerpt": "rng = pd.date_range('3/9/2012 9:30', periods=6, freq='d')"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The new concept \"DateRangeGeneration\" is very similar to \"Date_Range_Generation_2\" in that both refer to the process of generating date ranges using pandas functions like `pd.date_range`."
+    },
+    {
+      "id": "e_pandas_Series_with_random_data_and_date_index_synonymOf_Pandas_Series_of_Random_Normal_Data_with_Datetime_Index",
+      "source": "pandas_Series_with_random_data_and_date_index",
+      "target": "Pandas_Series_of_Random_Normal_Data_with_Datetime_Index",
+      "relation": "synonymOf",
+      "definition": "pandas Series with random data and date index synonymOf Pandas Series of Random Normal Data with Datetime Index",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Series Basics"
+          ],
+          "line_start": 98,
+          "line_end": 98,
+          "text_excerpt": "ts = pd.series(np.random.randn(6), index=dates)"
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "The new node is an exact synonym of this concept."
+    },
+    {
+      "id": "e_pandas_Series_with_random_data_and_date_index_synonymOf_Pandas_Series_with_Random_Normal_Data_and_Datetime_Index",
+      "source": "pandas_Series_with_random_data_and_date_index",
+      "target": "Pandas_Series_with_Random_Normal_Data_and_Datetime_Index",
+      "relation": "synonymOf",
+      "definition": "pandas Series with random data and date index synonymOf Pandas Series with Random Normal Data and Datetime Index",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Time Series Basics"
+          ],
+          "line_start": 98,
+          "line_end": 98,
+          "text_excerpt": "ts = pd.series(np.random.randn(6), index=dates)"
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "The new node is an exact synonym of this concept."
+    },
+    {
+      "id": "e_Fixed_frequency_date_range_generation_uses_Pandas_time_series_data_manipulation",
+      "source": "Fixed_frequency_date_range_generation",
+      "target": "Pandas_time_series_data_manipulation",
+      "relation": "uses",
+      "definition": "Fixed-frequency date range generation uses Pandas time series data manipulation",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date Ranges, Frequencies, and Shifting"
+          ],
+          "line_start": 145,
+          "line_end": 145,
+          "text_excerpt": "and generating fixed-frequency date ranges. for , you can convert"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The definition of \"Fixed-frequency date range generation\" closely aligns with the functionalities described for Pandas time series data manipulation, specifically mentioning date range generation."
+    },
+    {
+      "id": "e_Fixed_frequency_date_range_generation_parameterOf_DatetimeIndexGenerationParameters",
+      "source": "Fixed_frequency_date_range_generation",
+      "target": "DatetimeIndexGenerationParameters",
+      "relation": "parameterOf",
+      "definition": "Fixed-frequency date range generation parameterOf DatetimeIndexGenerationParameters",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date Ranges, Frequencies, and Shifting"
+          ],
+          "line_start": 145,
+          "line_end": 145,
+          "text_excerpt": "and generating fixed-frequency date ranges. for , you can convert"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"Fixed-frequency date range generation\" implies the use of parameters to define the frequency and extent of the generated dates."
+    },
+    {
+      "id": "e_Fixed_frequency_date_range_generation_isA_Date_Range_Generation_2",
+      "source": "Fixed_frequency_date_range_generation",
+      "target": "Date_Range_Generation_2",
+      "relation": "isA",
+      "definition": "Fixed-frequency date range generation isA Date Range Generation",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date Ranges, Frequencies, and Shifting"
+          ],
+          "line_start": 145,
+          "line_end": 145,
+          "text_excerpt": "and generating fixed-frequency date ranges. for , you can convert"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "The new concept \"Fixed-frequency date range generation\" is a specific type of date range generation."
+    },
+    {
+      "id": "e_Fixed_frequency_date_range_generation_isA_Pandas_Date_Range",
+      "source": "Fixed_frequency_date_range_generation",
+      "target": "Pandas_Date_Range",
+      "relation": "isA",
+      "definition": "Fixed-frequency date range generation isA Pandas Date Range",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date Ranges, Frequencies, and Shifting"
+          ],
+          "line_start": 145,
+          "line_end": 145,
+          "text_excerpt": "and generating fixed-frequency date ranges. for , you can convert"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"Fixed-frequency date range generation\" is a specific way to generate date ranges, and `pd.date_range` is a primary tool for this in pandas."
+    },
+    {
+      "id": "e_Fixed_frequency_date_range_generation_isA_DateRangeGeneration",
+      "source": "Fixed_frequency_date_range_generation",
+      "target": "DateRangeGeneration",
+      "relation": "isA",
+      "definition": "Fixed-frequency date range generation isA DateRangeGeneration",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date Ranges, Frequencies, and Shifting"
+          ],
+          "line_start": 145,
+          "line_end": 145,
+          "text_excerpt": "and generating fixed-frequency date ranges. for , you can convert"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"Fixed-frequency date range generation\" is a type of date range generation."
+    },
+    {
+      "id": "e_annual_frame_resampling_uses_Pandas_Time_Series_Resampling",
+      "source": "annual_frame_resampling",
+      "target": "Pandas_Time_Series_Resampling",
+      "relation": "uses",
+      "definition": "annual_frame_resampling uses Pandas Time Series Resampling",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Resampling and Frequency Conversion",
+            "Resampling with Periods"
+          ],
+          "line_start": 295,
+          "line_end": 295,
+          "text_excerpt": "annual_frame = frame.resample('a-dec').mean()"
+        }
+      ],
+      "confidence": 0.95,
+      "rationale": "The definition of \"annual_frame_resampling\" directly shows the use of the `.resample('a-dec').mean()` method, which is a core operation of Pandas Time Series Resampling."
+    },
+    {
+      "id": "e_Regular_interval_data_occurrence_isA_1",
+      "source": "Regular_interval_data_occurrence",
+      "target": "1",
+      "relation": "isA",
+      "definition": "Regular interval data occurrence isA Time Series Data",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series"
+          ],
+          "line_start": 6,
+          "line_end": 6,
+          "text_excerpt": "frequency, which is to say that data points occur at regular intervals according to some"
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "\"Regular interval data occurrence\" is a specific type of \"Time Series Data\" where the data points appear at consistent time intervals."
+    },
+    {
+      "id": "e_Regular_interval_data_occurrence_relatedTo_Fixed_frequency_date_range_generation",
+      "source": "Regular_interval_data_occurrence",
+      "target": "Fixed_frequency_date_range_generation",
+      "relation": "relatedTo",
+      "definition": "Regular interval data occurrence relatedTo Fixed-frequency date range generation",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series"
+          ],
+          "line_start": 6,
+          "line_end": 6,
+          "text_excerpt": "frequency, which is to say that data points occur at regular intervals according to some"
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "\"Regular interval data occurrence\" is precisely what \"Fixed-frequency date range generation\" aims to produce."
+    },
+    {
+      "id": "e_datetime_arithmetic_operations_partOf_3",
+      "source": "datetime_arithmetic_operations",
+      "target": "3",
+      "relation": "partOf",
+      "definition": "datetime arithmetic operations partOf Datetime",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date and Time Data Types and Tools"
+          ],
+          "line_start": 30,
+          "line_end": 30,
+          "text_excerpt": "we can apply arithmatic operations on datetime objects:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"datetime arithmetic operations\" are operations that can be applied to \"Datetime\" objects."
+    },
+    {
+      "id": "e_datetime_arithmetic_operations_relatedTo_Date_and_Time_Operations",
+      "source": "datetime_arithmetic_operations",
+      "target": "Date_and_Time_Operations",
+      "relation": "relatedTo",
+      "definition": "datetime arithmetic operations relatedTo Date and Time Operations",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date and Time Data Types and Tools"
+          ],
+          "line_start": 30,
+          "line_end": 30,
+          "text_excerpt": "we can apply arithmatic operations on datetime objects:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"datetime arithmetic operations\" is a more specific term or a component of general \"Date and Time Operations\"."
+    },
+    {
+      "id": "e_datetime_arithmetic_operations_relatedTo_Date_and_Datetime_Manipulation",
+      "source": "datetime_arithmetic_operations",
+      "target": "Date_and_Datetime_Manipulation",
+      "relation": "relatedTo",
+      "definition": "datetime arithmetic operations relatedTo Date and Datetime Manipulation",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Date and Time Data Types and Tools"
+          ],
+          "line_start": 30,
+          "line_end": 30,
+          "text_excerpt": "we can apply arithmatic operations on datetime objects:"
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "\"datetime arithmetic operations\" are a form of \"Date and Datetime Manipulation\"."
+    },
+    {
+      "id": "e_Datetime_String_Parsing_relatedTo_strftime_operation",
+      "source": "Datetime_String_Parsing",
+      "target": "strftime_operation",
+      "relation": "relatedTo",
+      "definition": "Datetime String Parsing relatedTo strftime operation",
+      "provenance": [
+        {
+          "section_path": [
+            "__ROOT__",
+            "Time Series",
+            "Exercise:"
+          ],
+          "line_start": 79,
+          "line_end": 79,
+          "text_excerpt": "datetime.strptime(value, '%y-%m-%d')"
+        }
+      ],
+      "confidence": 0.6,
+      "rationale": "Heuristic relation based on semantic proximity."
+    }
+  ]
+}

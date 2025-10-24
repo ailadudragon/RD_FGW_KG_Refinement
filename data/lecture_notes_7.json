@@ -1,0 +1,2598 @@
+{
+  "id": "0",
+  "level": 0,
+  "type": "section",
+  "title": "__ROOT__",
+  "content": "",
+  "children": [
+    {
+      "id": "1",
+      "level": 1,
+      "type": "section",
+      "title": "Data Science Programming",
+      "content": "___\n\n",
+      "children": [
+        {
+          "id": "1.1",
+          "level": 2,
+          "type": "section",
+          "title": "Week 8: Data Loading and Merging",
+          "content": "---\n**Agenda:**\n- Read and parse tables from HTML files\n- pd.read_html(html_source.text)\n- Read and write JSON data\n- json.loads()\n- json.dumps()\n- pd.read_json()\n- Combining and merging datasets\n- numpy.concatenate(list of narrays, axis)\n- pandas.concat(list of DataFrames, axis)\n- pd.merge(df1, df2, left_on='key1', right_on='key2', how='outer')\n- pd.merge(left1, right1, left_on='key', right_index=True)\n- left.join(right, on='key')\n\n# import\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\nimport json\nimport requests\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "---",
+              "clean": "---",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "**Agenda:**",
+              "clean": "**Agenda:**",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "- Read and parse tables from HTML files",
+              "clean": "- Read and parse tables from HTML files",
+              "meta": {
+                "line_start": 3,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "- pd.read_html(html_source.text)",
+              "clean": "- pd.read_html(html_source.text)",
+              "meta": {
+                "line_start": 4,
+                "line_end": 4,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "- Read and write JSON data",
+              "clean": "- Read and write JSON data",
+              "meta": {
+                "line_start": 5,
+                "line_end": 5,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "- json.loads()",
+              "clean": "- json.loads()",
+              "meta": {
+                "line_start": 6,
+                "line_end": 6,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "- json.dumps()",
+              "clean": "- json.dumps()",
+              "meta": {
+                "line_start": 7,
+                "line_end": 7,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "- pd.read_json()",
+              "clean": "- pd.read_json()",
+              "meta": {
+                "line_start": 8,
+                "line_end": 8,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "- Combining and merging datasets",
+              "clean": "- Combining and merging datasets",
+              "meta": {
+                "line_start": 9,
+                "line_end": 9,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "- numpy.concatenate(list of narrays, axis)",
+              "clean": "- numpy.concatenate(list of narrays, axis)",
+              "meta": {
+                "line_start": 10,
+                "line_end": 10,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "- pandas.concat(list of DataFrames, axis)",
+              "clean": "- pandas.concat(list of DataFrames, axis)",
+              "meta": {
+                "line_start": 11,
+                "line_end": 11,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "- pd.merge(df1, df2, left_on='key1', right_on='key2', how='outer')",
+              "clean": "- pd.merge(df1, df2, left_on='key1', right_on='key2', how='outer')",
+              "meta": {
+                "line_start": 12,
+                "line_end": 12,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "- pd.merge(left1, right1, left_on='key', right_index=True)",
+              "clean": "- pd.merge(left1, right1, left_on='key', right_index=True)",
+              "meta": {
+                "line_start": 13,
+                "line_end": 13,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "- left.join(right, on='key')",
+              "clean": "- left.join(right, on='key')",
+              "meta": {
+                "line_start": 14,
+                "line_end": 14,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 15,
+                "line_end": 15,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "# import",
+              "clean": "# import",
+              "meta": {
+                "line_start": 16,
+                "line_end": 16,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "import pandas as pd",
+              "clean": "import pandas as pd",
+              "meta": {
+                "line_start": 17,
+                "line_end": 17,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "import numpy as np",
+              "clean": "import numpy as np",
+              "meta": {
+                "line_start": 18,
+                "line_end": 18,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "import matplotlib.pyplot as plt",
+              "clean": "import matplotlib.pyplot as plt",
+              "meta": {
+                "line_start": 19,
+                "line_end": 19,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "import seaborn as sns",
+              "clean": "import seaborn as sns",
+              "meta": {
+                "line_start": 20,
+                "line_end": 20,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 21,
+                "line_end": 21,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "import json",
+              "clean": "import json",
+              "meta": {
+                "line_start": 22,
+                "line_end": 22,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "import requests",
+              "clean": "import requests",
+              "meta": {
+                "line_start": 23,
+                "line_end": 23,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 24,
+                "line_end": 24,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        }
+      ],
+      "content_elements": [
+        {
+          "type": "text",
+          "raw": "___",
+          "clean": "___",
+          "meta": {
+            "line_start": 1,
+            "line_end": 1,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "",
+          "clean": "",
+          "meta": {
+            "line_start": 2,
+            "line_end": 2,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "level": 1,
+      "type": "section",
+      "title": "Loading Data",
+      "content": "",
+      "children": [
+        {
+          "id": "2.1",
+          "level": 2,
+          "type": "section",
+          "title": "Accessing data is a necessary first step for data analysis. We are going to be focused on data input and output using pandas, though there are numerous tools in other libraries to help with reading and writing data in various formats. Input and output typically falls into a few main categories: reading text files and other more efficient on-disk formats, loading data from databases, and interacting with network sources like web APIs.",
+          "content": "\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        }
+      ],
+      "content_elements": []
+    },
+    {
+      "id": "3",
+      "level": 1,
+      "type": "section",
+      "title": "HTML: Web Scraping",
+      "content": "\n",
+      "children": [
+        {
+          "id": "3.0.1",
+          "level": 3,
+          "type": "section",
+          "title": "Python has many libraries for reading and writing data in the ubiquitous HTML and XML formats. Examples include lxml, Beautiful Soup, and html5lib. While lxml is comparatively much faster in general, the other libraries can better handle malformed HTML or XML files.",
+          "content": "\n",
+          "children": [
+            {
+              "id": "3.0.2",
+              "level": 3,
+              "type": "section",
+              "title": "Pandas has a built-in function, read_html, which uses libraries like lxml and Beautiful Soup to automatically parse tables out of HTML files as DataFrame objects. To show how this works, read in an HTML file  from the United States FDIC government agency showing bank failures: (https://www.fdic.gov/resources/resolutions/bank-failures/failed-bank-list/).",
+              "content": "\n```\nimport requests\n\ntarget_url = 'https://www.fdic.gov/resources/resolutions/bank-failures/failed-bank-list/'\n\nhtml_source = requests.get(target_url)\n\nhtml_source.status_code\n\nhtml_source.text\n\ntables = pd.read_html(html_source.text)\n\n```\n\n",
+              "children": [],
+              "content_elements": [
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 1,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\nimport requests\n\ntarget_url = 'https://www.fdic.gov/resources/resolutions/bank-failures/failed-bank-list/'\n\nhtml_source = requests.get(target_url)\n\nhtml_source.status_code\n\nhtml_source.text\n\ntables = pd.read_html(html_source.text)\n\n```",
+                  "clean": "```\nimport requests\n\ntarget_url = 'https://www.fdic.gov/resources/resolutions/bank-failures/failed-bank-list/'\n\nhtml_source = requests.get(target_url)\n\nhtml_source.status_code\n\nhtml_source.text\n\ntables = pd.read_html(html_source.text)\n\n```",
+                  "meta": {
+                    "line_start": 2,
+                    "line_end": 15,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 16,
+                    "line_end": 16,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            }
+          ],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "3.1",
+          "level": 2,
+          "type": "section",
+          "title": "Exercise:",
+          "content": "Run and test the above code.\n\n\n",
+          "children": [
+            {
+              "id": "3.1.1",
+              "level": 3,
+              "type": "section",
+              "title": "Explore the tables.",
+              "content": "\n\n",
+              "children": [],
+              "content_elements": [
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 1,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 2,
+                    "line_end": 2,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            },
+            {
+              "id": "3.1.2",
+              "level": 3,
+              "type": "section",
+              "title": "Change the column labels",
+              "content": "```\ndf.columns = ['Bank', 'City', 'State', 'Cert',\n'AI', 'ClosingDate', 'Fund']\n```\n\n",
+              "children": [],
+              "content_elements": [
+                {
+                  "type": "code",
+                  "raw": "```\ndf.columns = ['Bank', 'City', 'State', 'Cert',\n'AI', 'ClosingDate', 'Fund']\n```",
+                  "clean": "```\ndf.columns = ['Bank', 'City', 'State', 'Cert',\n'AI', 'ClosingDate', 'Fund']\n```",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 4,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 5,
+                    "line_end": 5,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            }
+          ],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "Run and test the above code.",
+              "clean": "Run and test the above code.",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 3,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "3.2",
+          "level": 2,
+          "type": "section",
+          "title": "Exercise:",
+          "content": "Run the above code.\n\n\n",
+          "children": [
+            {
+              "id": "3.2.1",
+              "level": 3,
+              "type": "section",
+              "title": "Parse the datetime column",
+              "content": "```\nclose_timestamps = pd.to_datetime(df['ClosingDate'])\n```\n\n\n",
+              "children": [],
+              "content_elements": [
+                {
+                  "type": "code",
+                  "raw": "```\nclose_timestamps = pd.to_datetime(df['ClosingDate'])\n```",
+                  "clean": "```\nclose_timestamps = pd.to_datetime(df['ClosingDate'])\n```",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 3,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 4,
+                    "line_end": 4,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 5,
+                    "line_end": 5,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            },
+            {
+              "id": "3.2.2",
+              "level": 3,
+              "type": "section",
+              "title": "Extract some interesting data",
+              "content": "```\nclose_timestamps.dt.year.value_counts()\n\nclose_timestamps.dt.year.value_counts().sort_index()\n```\n\n",
+              "children": [],
+              "content_elements": [
+                {
+                  "type": "code",
+                  "raw": "```\nclose_timestamps.dt.year.value_counts()\n\nclose_timestamps.dt.year.value_counts().sort_index()\n```",
+                  "clean": "```\nclose_timestamps.dt.year.value_counts()\n\nclose_timestamps.dt.year.value_counts().sort_index()\n```",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 5,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 6,
+                    "line_end": 6,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            }
+          ],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "Run the above code.",
+              "clean": "Run the above code.",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 3,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "3.3",
+          "level": 2,
+          "type": "section",
+          "title": "Exercise:",
+          "content": "Run the above code.\n\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "Run the above code.",
+              "clean": "Run the above code.",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 3,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        }
+      ],
+      "content_elements": [
+        {
+          "type": "text",
+          "raw": "",
+          "clean": "",
+          "meta": {
+            "line_start": 1,
+            "line_end": 1,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "level": 1,
+      "type": "section",
+      "title": "JSON Data",
+      "content": "",
+      "children": [
+        {
+          "id": "4.1",
+          "level": 2,
+          "type": "section",
+          "title": "JSON (short for JavaScript Object Notation) has become one of the standard formats for sending data by HTTP request between web browsers and other applications. It is a much more free-form data format than a tabular text form like CSV. Here is an example.",
+          "content": "\n```\n\n\nobj = \"\"\"\n{\"name\": \"Wes\",\n\"places_lived\": [\"United States\", \"Spain\", \"Germany\"],\n\"pet\": null,\n\"siblings\": [{\"name\": \"Scott\", \"age\": 30, \"pets\": [\"Zeus\", \"Zuko\"]},\n{\"name\": \"Katie\", \"age\": 38,\n\"pets\": [\"Sixes\", \"Stache\", \"Cisco\"]}]\n}\n```\n\nCreate a DataFrame:\n```\npd.DataFrame([obj])\n```\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "code",
+              "raw": "```\n\n\nobj = \"\"\"\n{\"name\": \"Wes\",\n\"places_lived\": [\"United States\", \"Spain\", \"Germany\"],\n\"pet\": null,\n\"siblings\": [{\"name\": \"Scott\", \"age\": 30, \"pets\": [\"Zeus\", \"Zuko\"]},\n{\"name\": \"Katie\", \"age\": 38,\n\"pets\": [\"Sixes\", \"Stache\", \"Cisco\"]}]\n}\n```",
+              "clean": "```\n\n\nobj = \"\"\"\n{\"name\": \"Wes\",\n\"places_lived\": [\"United States\", \"Spain\", \"Germany\"],\n\"pet\": null,\n\"siblings\": [{\"name\": \"Scott\", \"age\": 30, \"pets\": [\"Zeus\", \"Zuko\"]},\n{\"name\": \"Katie\", \"age\": 38,\n\"pets\": [\"Sixes\", \"Stache\", \"Cisco\"]}]\n}\n```",
+              "meta": {
+                "line_start": 2,
+                "line_end": 13,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 14,
+                "line_end": 14,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "Create a DataFrame:",
+              "clean": "Create a DataFrame:",
+              "meta": {
+                "line_start": 15,
+                "line_end": 15,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "code",
+              "raw": "```\npd.DataFrame([obj])\n```",
+              "clean": "```\npd.DataFrame([obj])\n```",
+              "meta": {
+                "line_start": 16,
+                "line_end": 18,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 19,
+                "line_end": 19,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "4.2",
+          "level": 2,
+          "type": "section",
+          "title": "How to parse a JSON structure into a Python object?",
+          "content": "```\nimport json\n\njson.loads(obj)\n\npd.DataFrame([json.loads(obj)])\n\nresult = json.loads(obj)\n\nresult['siblings']\n\n```\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "code",
+              "raw": "```\nimport json\n\njson.loads(obj)\n\npd.DataFrame([json.loads(obj)])\n\nresult = json.loads(obj)\n\nresult['siblings']\n\n```",
+              "clean": "```\nimport json\n\njson.loads(obj)\n\npd.DataFrame([json.loads(obj)])\n\nresult = json.loads(obj)\n\nresult['siblings']\n\n```",
+              "meta": {
+                "line_start": 1,
+                "line_end": 12,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 13,
+                "line_end": 13,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "4.3",
+          "level": 2,
+          "type": "section",
+          "title": "Exercise:",
+          "content": "Run and test the above code.\n\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "Run and test the above code.",
+              "clean": "Run and test the above code.",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 3,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "4.4",
+          "level": 2,
+          "type": "section",
+          "title": "Extract the nested information and create a flatten DataFrame.",
+          "content": "```\nsibs = pd.DataFrame(result['siblings'])\n\nrows = []\nfor idx, row in sibs.iterrows():\npets = row['pets']\nfor pet in pets:\ncols = {}\ncols['name'] = row['name']\ncols['age']= row['age']\ncols['pet'] = pet\nrows.append(cols)\n\npd.DataFrame(rows)\n```\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "code",
+              "raw": "```\nsibs = pd.DataFrame(result['siblings'])\n\nrows = []\nfor idx, row in sibs.iterrows():\npets = row['pets']\nfor pet in pets:\ncols = {}\ncols['name'] = row['name']\ncols['age']= row['age']\ncols['pet'] = pet\nrows.append(cols)\n\npd.DataFrame(rows)\n```",
+              "clean": "```\nsibs = pd.DataFrame(result['siblings'])\n\nrows = []\nfor idx, row in sibs.iterrows():\npets = row['pets']\nfor pet in pets:\ncols = {}\ncols['name'] = row['name']\ncols['age']= row['age']\ncols['pet'] = pet\nrows.append(cols)\n\npd.DataFrame(rows)\n```",
+              "meta": {
+                "line_start": 1,
+                "line_end": 15,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 16,
+                "line_end": 16,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "4.5",
+          "level": 2,
+          "type": "section",
+          "title": "Exercise:",
+          "content": "Run and test the above code.\n\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "Run and test the above code.",
+              "clean": "Run and test the above code.",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 3,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "4.6",
+          "level": 2,
+          "type": "section",
+          "title": "How you convert a JSON object or list of objects to a DataFrame or some other data structure for analysis will be up to you. Conveniently, you can pass a list of dicts (which were previously JSON objects) to the DataFrame constructor and select a subset of the data fields. For example, we did",
+          "content": "```\nresult_df = pd.DataFrame(result['siblings'])\n\nsiblings = pd.DataFrame(result['siblings'], columns=['name', 'age'])\n```\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "code",
+              "raw": "```\nresult_df = pd.DataFrame(result['siblings'])\n\nsiblings = pd.DataFrame(result['siblings'], columns=['name', 'age'])\n```",
+              "clean": "```\nresult_df = pd.DataFrame(result['siblings'])\n\nsiblings = pd.DataFrame(result['siblings'], columns=['name', 'age'])\n```",
+              "meta": {
+                "line_start": 1,
+                "line_end": 5,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 6,
+                "line_end": 6,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "4.7",
+          "level": 2,
+          "type": "section",
+          "title": "To flatten the entire dictionary as a DataFrame, we should merge the top-level DataFrame with the nested DataFrame based on the shared column, in this case, the name \"Wes\".",
+          "content": "\n```\nobj = \"\"\"\n{\"name\": \"Wes\",\n\"places_lived\": [\"United States\", \"Spain\", \"Germany\"],\n\"pet\": null,\n\"siblings\": [{\"name\": \"Scott\", \"age\": 30, \"pets\": [\"Zeus\", \"Zuko\"]},\n{\"name\": \"Katie\", \"age\": 38,\n\"pets\": [\"Sixes\", \"Stache\", \"Cisco\"]}]\n}\n\"\"\"\n```\n\nresult = json.loads(obj)\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "code",
+              "raw": "```\nobj = \"\"\"\n{\"name\": \"Wes\",\n\"places_lived\": [\"United States\", \"Spain\", \"Germany\"],\n\"pet\": null,\n\"siblings\": [{\"name\": \"Scott\", \"age\": 30, \"pets\": [\"Zeus\", \"Zuko\"]},\n{\"name\": \"Katie\", \"age\": 38,\n\"pets\": [\"Sixes\", \"Stache\", \"Cisco\"]}]\n}\n\"\"\"\n```",
+              "clean": "```\nobj = \"\"\"\n{\"name\": \"Wes\",\n\"places_lived\": [\"United States\", \"Spain\", \"Germany\"],\n\"pet\": null,\n\"siblings\": [{\"name\": \"Scott\", \"age\": 30, \"pets\": [\"Zeus\", \"Zuko\"]},\n{\"name\": \"Katie\", \"age\": 38,\n\"pets\": [\"Sixes\", \"Stache\", \"Cisco\"]}]\n}\n\"\"\"\n```",
+              "meta": {
+                "line_start": 2,
+                "line_end": 12,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 13,
+                "line_end": 13,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "result = json.loads(obj)",
+              "clean": "result = json.loads(obj)",
+              "meta": {
+                "line_start": 14,
+                "line_end": 14,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 15,
+                "line_end": 15,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "4.8",
+          "level": 2,
+          "type": "section",
+          "title": "Extract and Flatten the Nested Dictionary",
+          "content": "\nsibs = pd.DataFrame(result['siblings'])\n\nrows = []\nfor idx, row in sibs.iterrows():\npets = row['pets']\nfor pet in pets:\ncols = {}\ncols['name'] = row['name']\ncols['age']= row['age']\ncols['pet'] = pet\nrows.append(cols)\n\nsibs_flat = pd.DataFrame(rows)\n\nsibs_flat = sibs_flat.rename(columns={'name':'sib_name', 'age':'sib_age', 'pet':'sib_pet'})\nsibs_flat\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "sibs = pd.DataFrame(result['siblings'])",
+              "clean": "sibs = pd.DataFrame(result['siblings'])",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 3,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "rows = []",
+              "clean": "rows = []",
+              "meta": {
+                "line_start": 4,
+                "line_end": 4,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "for idx, row in sibs.iterrows():",
+              "clean": "for idx, row in sibs.iterrows():",
+              "meta": {
+                "line_start": 5,
+                "line_end": 5,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "pets = row['pets']",
+              "clean": "pets = row['pets']",
+              "meta": {
+                "line_start": 6,
+                "line_end": 6,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "for pet in pets:",
+              "clean": "for pet in pets:",
+              "meta": {
+                "line_start": 7,
+                "line_end": 7,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "cols = {}",
+              "clean": "cols = {}",
+              "meta": {
+                "line_start": 8,
+                "line_end": 8,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "cols['name'] = row['name']",
+              "clean": "cols['name'] = row['name']",
+              "meta": {
+                "line_start": 9,
+                "line_end": 9,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "cols['age']= row['age']",
+              "clean": "cols['age']= row['age']",
+              "meta": {
+                "line_start": 10,
+                "line_end": 10,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "cols['pet'] = pet",
+              "clean": "cols['pet'] = pet",
+              "meta": {
+                "line_start": 11,
+                "line_end": 11,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "rows.append(cols)",
+              "clean": "rows.append(cols)",
+              "meta": {
+                "line_start": 12,
+                "line_end": 12,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 13,
+                "line_end": 13,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "sibs_flat = pd.DataFrame(rows)",
+              "clean": "sibs_flat = pd.DataFrame(rows)",
+              "meta": {
+                "line_start": 14,
+                "line_end": 14,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 15,
+                "line_end": 15,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "sibs_flat = sibs_flat.rename(columns={'name':'sib_name', 'age':'sib_age', 'pet':'sib_pet'})",
+              "clean": "sibs_flat = sibs_flat.rename(columns={'name':'sib_name', 'age':'sib_age', 'pet':'sib_pet'})",
+              "meta": {
+                "line_start": 16,
+                "line_end": 16,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "sibs_flat",
+              "clean": "sibs_flat",
+              "meta": {
+                "line_start": 17,
+                "line_end": 17,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 18,
+                "line_end": 18,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "4.9",
+          "level": 2,
+          "type": "section",
+          "title": "Add the Top-Level Name to the DataFrame from the Nested Dictionary",
+          "content": "\nsibs_flat['name'] = result['name']\nsibs_flat\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "sibs_flat['name'] = result['name']",
+              "clean": "sibs_flat['name'] = result['name']",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "sibs_flat",
+              "clean": "sibs_flat",
+              "meta": {
+                "line_start": 3,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 4,
+                "line_end": 4,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "4.10",
+          "level": 2,
+          "type": "section",
+          "title": "Extract and Flatten the Top-Level Dictionary",
+          "content": "\nper = pd.DataFrame([result], columns=['name', 'places_lived', 'pet'])\nper\n\nrows = []\nfor idx, row in per.iterrows():\nplaces = row['places_lived']\nfor place in places:\ncols = {}\ncols['name'] = row['name']\ncols['place_lived']= place\ncols['pet'] = row['pet']\nrows.append(cols)\n\nper_flat = pd.DataFrame(rows)\n\nper_flat\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "per = pd.DataFrame([result], columns=['name', 'places_lived', 'pet'])",
+              "clean": "per = pd.DataFrame([result], columns=['name', 'places_lived', 'pet'])",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "per",
+              "clean": "per",
+              "meta": {
+                "line_start": 3,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 4,
+                "line_end": 4,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "rows = []",
+              "clean": "rows = []",
+              "meta": {
+                "line_start": 5,
+                "line_end": 5,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "for idx, row in per.iterrows():",
+              "clean": "for idx, row in per.iterrows():",
+              "meta": {
+                "line_start": 6,
+                "line_end": 6,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "places = row['places_lived']",
+              "clean": "places = row['places_lived']",
+              "meta": {
+                "line_start": 7,
+                "line_end": 7,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "for place in places:",
+              "clean": "for place in places:",
+              "meta": {
+                "line_start": 8,
+                "line_end": 8,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "cols = {}",
+              "clean": "cols = {}",
+              "meta": {
+                "line_start": 9,
+                "line_end": 9,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "cols['name'] = row['name']",
+              "clean": "cols['name'] = row['name']",
+              "meta": {
+                "line_start": 10,
+                "line_end": 10,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "cols['place_lived']= place",
+              "clean": "cols['place_lived']= place",
+              "meta": {
+                "line_start": 11,
+                "line_end": 11,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "cols['pet'] = row['pet']",
+              "clean": "cols['pet'] = row['pet']",
+              "meta": {
+                "line_start": 12,
+                "line_end": 12,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "rows.append(cols)",
+              "clean": "rows.append(cols)",
+              "meta": {
+                "line_start": 13,
+                "line_end": 13,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 14,
+                "line_end": 14,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "per_flat = pd.DataFrame(rows)",
+              "clean": "per_flat = pd.DataFrame(rows)",
+              "meta": {
+                "line_start": 15,
+                "line_end": 15,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 16,
+                "line_end": 16,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "per_flat",
+              "clean": "per_flat",
+              "meta": {
+                "line_start": 17,
+                "line_end": 17,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 18,
+                "line_end": 18,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "4.11",
+          "level": 2,
+          "type": "section",
+          "title": "Merge the top-level and nested DataFrames",
+          "content": "\npd.merge(per_flat, sibs_flat, on='name')\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "pd.merge(per_flat, sibs_flat, on='name')",
+              "clean": "pd.merge(per_flat, sibs_flat, on='name')",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 3,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "4.12",
+          "level": 2,
+          "type": "section",
+          "title": "The pandas `read_json` can automatically convert JSON datasets in specific arrangements into a Series or DataFrame. For example, let us load",
+          "content": "```\nexample.json\n```\n\nfrom google.colab import files\nfiles.upload()\n\n# show the content of the file\nwith open('example.json') as f:\nprint(f.read())\n\npd.read_json('example.json')\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "code",
+              "raw": "```\nexample.json\n```",
+              "clean": "```\nexample.json\n```",
+              "meta": {
+                "line_start": 1,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 4,
+                "line_end": 4,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "from google.colab import files",
+              "clean": "from google.colab import files",
+              "meta": {
+                "line_start": 5,
+                "line_end": 5,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "files.upload()",
+              "clean": "files.upload()",
+              "meta": {
+                "line_start": 6,
+                "line_end": 6,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 7,
+                "line_end": 7,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "# show the content of the file",
+              "clean": "# show the content of the file",
+              "meta": {
+                "line_start": 8,
+                "line_end": 8,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "with open('example.json') as f:",
+              "clean": "with open('example.json') as f:",
+              "meta": {
+                "line_start": 9,
+                "line_end": 9,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "print(f.read())",
+              "clean": "print(f.read())",
+              "meta": {
+                "line_start": 10,
+                "line_end": 10,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 11,
+                "line_end": 11,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "pd.read_json('example.json')",
+              "clean": "pd.read_json('example.json')",
+              "meta": {
+                "line_start": 12,
+                "line_end": 12,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 13,
+                "line_end": 13,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        }
+      ],
+      "content_elements": []
+    },
+    {
+      "id": "5",
+      "level": 1,
+      "type": "section",
+      "title": "Combining and Merging Datasets",
+      "content": "\n",
+      "children": [
+        {
+          "id": "5.1",
+          "level": 2,
+          "type": "section",
+          "title": "Concatenating Along an Axis",
+          "content": "",
+          "children": [],
+          "content_elements": []
+        },
+        {
+          "id": "5.2",
+          "level": 2,
+          "type": "section",
+          "title": "A kind of data combination operation is referred to interchangeably as concatenation, binding, or stacking.",
+          "content": "\n```\ndf1 = pd.DataFrame([{'name':'Alice', 'Subject':'math', 'Score':95}, {'name':'Bob', 'Subject':'English', 'Score':96}])\n\ndf2 = pd.DataFrame([['Alice', 'Frank', 'Charlie'], [19, 20, 18], ['alice@drexel', 'frank@drexel', 'charlie@drexel']])\n\ndf2 = df2.T\n\ndf2.columns = ['name', 'age', 'email']\n\ndf3  = pd.concat([df1, df2], axis=1, keys=['df1', 'df2'])\n\npd.concat([df1, df2])\n\n```\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "code",
+              "raw": "```\ndf1 = pd.DataFrame([{'name':'Alice', 'Subject':'math', 'Score':95}, {'name':'Bob', 'Subject':'English', 'Score':96}])\n\ndf2 = pd.DataFrame([['Alice', 'Frank', 'Charlie'], [19, 20, 18], ['alice@drexel', 'frank@drexel', 'charlie@drexel']])\n\ndf2 = df2.T\n\ndf2.columns = ['name', 'age', 'email']\n\ndf3  = pd.concat([df1, df2], axis=1, keys=['df1', 'df2'])\n\npd.concat([df1, df2])\n\n```",
+              "clean": "```\ndf1 = pd.DataFrame([{'name':'Alice', 'Subject':'math', 'Score':95}, {'name':'Bob', 'Subject':'English', 'Score':96}])\n\ndf2 = pd.DataFrame([['Alice', 'Frank', 'Charlie'], [19, 20, 18], ['alice@drexel', 'frank@drexel', 'charlie@drexel']])\n\ndf2 = df2.T\n\ndf2.columns = ['name', 'age', 'email']\n\ndf3  = pd.concat([df1, df2], axis=1, keys=['df1', 'df2'])\n\npd.concat([df1, df2])\n\n```",
+              "meta": {
+                "line_start": 2,
+                "line_end": 15,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 16,
+                "line_end": 16,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "5.3",
+          "level": 2,
+          "type": "section",
+          "title": "Exercise:",
+          "content": "Run and test the above code.\n\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "Run and test the above code.",
+              "clean": "Run and test the above code.",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 3,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "5.4",
+          "level": 2,
+          "type": "section",
+          "title": "In the context of pandas objects such as Series and DataFrame, having labeled axes enable you to further generalize array concatenation. In particular, you have a number of additional things to think about:",
+          "content": "* If the objects are indexed differently on the other axes, should we combine the\ndistinct elements in these axes or use only the shared values (the intersection)?\n* Do the concatenated chunks of data need to be identifiable in the resulting\nobject?\n* Does the “concatenation axis” contain data that needs to be preserved? In many\ncases, the default integer labels in a DataFrame are best discarded during\nconcatenation.\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "* If the objects are indexed differently on the other axes, should we combine the",
+              "clean": "* If the objects are indexed differently on the other axes, should we combine the",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "distinct elements in these axes or use only the shared values (the intersection)?",
+              "clean": "distinct elements in these axes or use only the shared values (the intersection)?",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "* Do the concatenated chunks of data need to be identifiable in the resulting",
+              "clean": "* Do the concatenated chunks of data need to be identifiable in the resulting",
+              "meta": {
+                "line_start": 3,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "object?",
+              "clean": "object?",
+              "meta": {
+                "line_start": 4,
+                "line_end": 4,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "* Does the “concatenation axis” contain data that needs to be preserved? In many",
+              "clean": "* Does the “concatenation axis” contain data that needs to be preserved? In many",
+              "meta": {
+                "line_start": 5,
+                "line_end": 5,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "cases, the default integer labels in a DataFrame are best discarded during",
+              "clean": "cases, the default integer labels in a DataFrame are best discarded during",
+              "meta": {
+                "line_start": 6,
+                "line_end": 6,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "concatenation.",
+              "clean": "concatenation.",
+              "meta": {
+                "line_start": 7,
+                "line_end": 7,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 8,
+                "line_end": 8,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "5.5",
+          "level": 2,
+          "type": "section",
+          "title": "The concat function in pandas provides a consistent way to address each of these concerns. Here is a list of examples to illustrate how it works. Suppose we have three Series with no index overlap:",
+          "content": "```\ns1 = pd.Series([0, 1], index=['a', 'b'])\ns2 = pd.Series([2, 3, 4], index=['c', 'd', 'e'])\ns3 = pd.Series([5, 6], index=['f', 'g'])\n```\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "code",
+              "raw": "```\ns1 = pd.Series([0, 1], index=['a', 'b'])\ns2 = pd.Series([2, 3, 4], index=['c', 'd', 'e'])\ns3 = pd.Series([5, 6], index=['f', 'g'])\n```",
+              "clean": "```\ns1 = pd.Series([0, 1], index=['a', 'b'])\ns2 = pd.Series([2, 3, 4], index=['c', 'd', 'e'])\ns3 = pd.Series([5, 6], index=['f', 'g'])\n```",
+              "meta": {
+                "line_start": 1,
+                "line_end": 5,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 6,
+                "line_end": 6,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "5.6",
+          "level": 2,
+          "type": "section",
+          "title": "Calling concat with these objects in a list glues together the values and indexes:",
+          "content": "```\npd.concat([s1, s2, s3], axis = 1)\n```\n\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "code",
+              "raw": "```\npd.concat([s1, s2, s3], axis = 1)\n```",
+              "clean": "```\npd.concat([s1, s2, s3], axis = 1)\n```",
+              "meta": {
+                "line_start": 1,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 4,
+                "line_end": 4,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 5,
+                "line_end": 5,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "5.7",
+          "level": 2,
+          "type": "section",
+          "title": "By default concat works along axis=0, producing another Series. If you pass axis=1, the result will instead be a DataFrame (axis=1 is the columns):",
+          "content": "```\npd.concat([s1, s2, s3])\n```\n\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "code",
+              "raw": "```\npd.concat([s1, s2, s3])\n```",
+              "clean": "```\npd.concat([s1, s2, s3])\n```",
+              "meta": {
+                "line_start": 1,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 4,
+                "line_end": 4,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 5,
+                "line_end": 5,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "5.8",
+          "level": 2,
+          "type": "section",
+          "title": "In this case there is no overlap on the other axis, which as you can see is the sorted union (the 'outer' join) of the indexes. You can instead intersect them by passing join='inner':",
+          "content": "```\ns4 = pd.concat([s1, s3])\npd.concat([s1, s4], axis=1, join='inner')\n```\n\n\n",
+          "children": [
+            {
+              "id": "5.8.1",
+              "level": 3,
+              "type": "section",
+              "title": "Combine DataFrames:",
+              "content": "We can concatenate dataframes on axis to combine them vertically or horizontally.\n```\ndf1 = pd.DataFrame(np.arange(6).reshape(3, 2), index=['a', 'b', 'c'],\ncolumns=['one', 'two'])\ndf2 = pd.DataFrame(5 + np.arange(4).reshape(2, 2), index=['a', 'c'],\ncolumns=['three', 'four'])\n\npd.concat([df1, df2], axis=0)\n\npd.concat([df1, df2], axis=1)\n```\n\n",
+              "children": [],
+              "content_elements": [
+                {
+                  "type": "text",
+                  "raw": "We can concatenate dataframes on axis to combine them vertically or horizontally.",
+                  "clean": "We can concatenate dataframes on axis to combine them vertically or horizontally.",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 1,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\ndf1 = pd.DataFrame(np.arange(6).reshape(3, 2), index=['a', 'b', 'c'],\ncolumns=['one', 'two'])\ndf2 = pd.DataFrame(5 + np.arange(4).reshape(2, 2), index=['a', 'c'],\ncolumns=['three', 'four'])\n\npd.concat([df1, df2], axis=0)\n\npd.concat([df1, df2], axis=1)\n```",
+                  "clean": "```\ndf1 = pd.DataFrame(np.arange(6).reshape(3, 2), index=['a', 'b', 'c'],\ncolumns=['one', 'two'])\ndf2 = pd.DataFrame(5 + np.arange(4).reshape(2, 2), index=['a', 'c'],\ncolumns=['three', 'four'])\n\npd.concat([df1, df2], axis=0)\n\npd.concat([df1, df2], axis=1)\n```",
+                  "meta": {
+                    "line_start": 2,
+                    "line_end": 11,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 12,
+                    "line_end": 12,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            }
+          ],
+          "content_elements": [
+            {
+              "type": "code",
+              "raw": "```\ns4 = pd.concat([s1, s3])\npd.concat([s1, s4], axis=1, join='inner')\n```",
+              "clean": "```\ns4 = pd.concat([s1, s3])\npd.concat([s1, s4], axis=1, join='inner')\n```",
+              "meta": {
+                "line_start": 1,
+                "line_end": 4,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 5,
+                "line_end": 5,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 6,
+                "line_end": 6,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "5.9",
+          "level": 2,
+          "type": "section",
+          "title": "Exercise:",
+          "content": "Run and test the above code.\n\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "Run and test the above code.",
+              "clean": "Run and test the above code.",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 3,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "5.10",
+          "level": 2,
+          "type": "section",
+          "title": "Database-Style DataFrame Joins",
+          "content": "",
+          "children": [],
+          "content_elements": []
+        },
+        {
+          "id": "5.11",
+          "level": 2,
+          "type": "section",
+          "title": "Merge or join operations combine datasets by linking rows using one or more keys. These operations are central to relational databases (e.g., SQL-based). The merge function in pandas is the main entry point for using these algorithms on your data. Let’s start with a simple example:",
+          "content": "\n```\ndf1 = pd.DataFrame({'key1': ['b', 'b', 'a', 'c', 'a', 'a', 'b'],\n'data1': range(7)})\ndf2 = pd.DataFrame({'key2': ['a', 'b', 'd'],\n'data2': range(3)})\n\npd.merge(df1, df2, left_on='key1', right_on='key2', how='outer')\n\ndf1.merge(df2, left_on='key1', right_on='key2')\n\ndf1.join(df2)\n```\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "code",
+              "raw": "```\ndf1 = pd.DataFrame({'key1': ['b', 'b', 'a', 'c', 'a', 'a', 'b'],\n'data1': range(7)})\ndf2 = pd.DataFrame({'key2': ['a', 'b', 'd'],\n'data2': range(3)})\n\npd.merge(df1, df2, left_on='key1', right_on='key2', how='outer')\n\ndf1.merge(df2, left_on='key1', right_on='key2')\n\ndf1.join(df2)\n```",
+              "clean": "```\ndf1 = pd.DataFrame({'key1': ['b', 'b', 'a', 'c', 'a', 'a', 'b'],\n'data1': range(7)})\ndf2 = pd.DataFrame({'key2': ['a', 'b', 'd'],\n'data2': range(3)})\n\npd.merge(df1, df2, left_on='key1', right_on='key2', how='outer')\n\ndf1.merge(df2, left_on='key1', right_on='key2')\n\ndf1.join(df2)\n```",
+              "meta": {
+                "line_start": 2,
+                "line_end": 13,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 14,
+                "line_end": 14,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "5.12",
+          "level": 2,
+          "type": "section",
+          "title": "Exercise:",
+          "content": "Run and test the above code.\n\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "Run and test the above code.",
+              "clean": "Run and test the above code.",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 3,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "5.13",
+          "level": 2,
+          "type": "section",
+          "title": "Note that I didn't specify which column to join on. If that information is not specified, merge uses the overlapping column names as the keys. It's a good practice to specify explicitly, though:",
+          "content": "```\npd.merge(df1, df2, left_on='key', right_on='key')\n```\n\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "code",
+              "raw": "```\npd.merge(df1, df2, left_on='key', right_on='key')\n```",
+              "clean": "```\npd.merge(df1, df2, left_on='key', right_on='key')\n```",
+              "meta": {
+                "line_start": 1,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 4,
+                "line_end": 4,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 5,
+                "line_end": 5,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "5.14",
+          "level": 2,
+          "type": "section",
+          "title": "By default merge does an 'inner' join; the keys in the result are the intersection, or the common set found in both tables. Other possible options are 'left', 'right', and 'outer'. The outer join takes the union of the keys, combining the effect of applying both left and right joins:",
+          "content": "```\npd.merge(df1, df2)\n\npd.merge(df1, df2, how='outer')\n```\n\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "code",
+              "raw": "```\npd.merge(df1, df2)\n\npd.merge(df1, df2, how='outer')\n```",
+              "clean": "```\npd.merge(df1, df2)\n\npd.merge(df1, df2, how='outer')\n```",
+              "meta": {
+                "line_start": 1,
+                "line_end": 5,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 6,
+                "line_end": 6,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 7,
+                "line_end": 7,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "5.15",
+          "level": 2,
+          "type": "section",
+          "title": "Merging on Index",
+          "content": "",
+          "children": [],
+          "content_elements": []
+        },
+        {
+          "id": "5.16",
+          "level": 2,
+          "type": "section",
+          "title": "In some cases, the merge key(s) in a DataFrame will be found in its index. In this case, you can pass left_index=True or right_index=True (or both) to indicate that the index should be used as the merge key:",
+          "content": "\n```\nleft1 = pd.DataFrame({'key': ['a', 'b', 'a', 'a', 'b', 'c'],\n'value': range(6)})\nright1 = pd.DataFrame({'group_val': [3.5, 7]}, index=['a', 'b'])\n\npd.merge(left1, right1.reset_index(), left_on='key', right_on='index')\n\npd.merge(left1, right1, left_on='key', right_index=True)\n\n\n```\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "code",
+              "raw": "```\nleft1 = pd.DataFrame({'key': ['a', 'b', 'a', 'a', 'b', 'c'],\n'value': range(6)})\nright1 = pd.DataFrame({'group_val': [3.5, 7]}, index=['a', 'b'])\n\npd.merge(left1, right1.reset_index(), left_on='key', right_on='index')\n\npd.merge(left1, right1, left_on='key', right_index=True)\n\n\n```",
+              "clean": "```\nleft1 = pd.DataFrame({'key': ['a', 'b', 'a', 'a', 'b', 'c'],\n'value': range(6)})\nright1 = pd.DataFrame({'group_val': [3.5, 7]}, index=['a', 'b'])\n\npd.merge(left1, right1.reset_index(), left_on='key', right_on='index')\n\npd.merge(left1, right1, left_on='key', right_index=True)\n\n\n```",
+              "meta": {
+                "line_start": 2,
+                "line_end": 12,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 13,
+                "line_end": 13,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "5.17",
+          "level": 2,
+          "type": "section",
+          "title": "Exercise:",
+          "content": "Run and test the above code.\n\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "Run and test the above code.",
+              "clean": "Run and test the above code.",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 3,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        }
+      ],
+      "content_elements": [
+        {
+          "type": "text",
+          "raw": "",
+          "clean": "",
+          "meta": {
+            "line_start": 1,
+            "line_end": 1,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        }
+      ]
+    }
+  ],
+  "content_elements": []
+}

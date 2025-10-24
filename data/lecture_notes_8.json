@@ -1,0 +1,2580 @@
+{
+  "id": "0",
+  "level": 0,
+  "type": "section",
+  "title": "__ROOT__",
+  "content": "",
+  "children": [
+    {
+      "id": "1",
+      "level": 1,
+      "type": "section",
+      "title": "Data Science Programming",
+      "content": "\n",
+      "children": [
+        {
+          "id": "1.1",
+          "level": 2,
+          "type": "section",
+          "title": "Week 9: Lecture 1: Time Series Data Analysis",
+          "content": "\n---\n\n**Agenda:**\n- Apply techiques to time series data\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "---",
+              "clean": "---",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 3,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "**Agenda:**",
+              "clean": "**Agenda:**",
+              "meta": {
+                "line_start": 4,
+                "line_end": 4,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "- Apply techiques to time series data",
+              "clean": "- Apply techiques to time series data",
+              "meta": {
+                "line_start": 5,
+                "line_end": 5,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 6,
+                "line_end": 6,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        }
+      ],
+      "content_elements": [
+        {
+          "type": "text",
+          "raw": "",
+          "clean": "",
+          "meta": {
+            "line_start": 1,
+            "line_end": 1,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "level": 1,
+      "type": "section",
+      "title": "Time Series",
+      "content": "Time series data is an important form of structured data in many different fields, such\nas finance, economics, ecology, neuroscience, and physics. Anything that is observed\nor measured at many points in time forms a time series. Many time series are fixed\nfrequency, which is to say that data points occur at regular intervals according to some\nrule, such as every 15 seconds, every 5 minutes, or once per month. Time series can\nalso be irregular without a fixed unit of time or offset between units. How you mark\nand refer to time series data depends on the application, and you may have one of the\nfollowing:\n\n- Timestamps, specific instants in time Fixed periods, such as the month January 2007 or the full year 2010\n- Intervals of time, indicated by a start and end timestamp. Periods can be thought\nof as special cases of intervals\n- Experiment or elapsed time; each timestamp is a measure of time relative to a\nparticular start time (e.g., the diameter of a cookie baking each second since\nbeing placed in the oven)\n\n# imports\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n",
+      "children": [
+        {
+          "id": "2.1",
+          "level": 2,
+          "type": "section",
+          "title": "Date and Time Data Types and Tools",
+          "content": "The Python standard library includes data types for date and time data, as well as\ncalendar-related functionality. The datetime, time, and calendar modules are the\nmain places to start. The datetime.datetime type, or simply datetime, is widely\nused.\n```\nfrom datetime import datetime\nnow = datetime.now()\n\nnow.year, now.month, now.day\n```\n\nWe can apply arithmatic operations on datetime objects:\n```\ndatetime.now() - datetime(2024, 4, 20)\n```\n\nThe result have time related properties:\n```\ndelta = datetime(2021, 1, 7) - datetime(2008, 6, 24, 8, 15)\n\ndelta.days\ndelta.seconds\n```\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "The Python standard library includes data types for date and time data, as well as",
+              "clean": "The Python standard library includes data types for date and time data, as well as",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "calendar-related functionality. The datetime, time, and calendar modules are the",
+              "clean": "calendar-related functionality. The datetime, time, and calendar modules are the",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "main places to start. The datetime.datetime type, or simply datetime, is widely",
+              "clean": "main places to start. The datetime.datetime type, or simply datetime, is widely",
+              "meta": {
+                "line_start": 3,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "used.",
+              "clean": "used.",
+              "meta": {
+                "line_start": 4,
+                "line_end": 4,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "code",
+              "raw": "```\nfrom datetime import datetime\nnow = datetime.now()\n\nnow.year, now.month, now.day\n```",
+              "clean": "```\nfrom datetime import datetime\nnow = datetime.now()\n\nnow.year, now.month, now.day\n```",
+              "meta": {
+                "line_start": 5,
+                "line_end": 10,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 11,
+                "line_end": 11,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "We can apply arithmatic operations on datetime objects:",
+              "clean": "We can apply arithmatic operations on datetime objects:",
+              "meta": {
+                "line_start": 12,
+                "line_end": 12,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "code",
+              "raw": "```\ndatetime.now() - datetime(2024, 4, 20)\n```",
+              "clean": "```\ndatetime.now() - datetime(2024, 4, 20)\n```",
+              "meta": {
+                "line_start": 13,
+                "line_end": 15,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 16,
+                "line_end": 16,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "The result have time related properties:",
+              "clean": "The result have time related properties:",
+              "meta": {
+                "line_start": 17,
+                "line_end": 17,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "code",
+              "raw": "```\ndelta = datetime(2021, 1, 7) - datetime(2008, 6, 24, 8, 15)\n\ndelta.days\ndelta.seconds\n```",
+              "clean": "```\ndelta = datetime(2021, 1, 7) - datetime(2008, 6, 24, 8, 15)\n\ndelta.days\ndelta.seconds\n```",
+              "meta": {
+                "line_start": 18,
+                "line_end": 23,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 24,
+                "line_end": 24,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "2.2",
+          "level": 2,
+          "type": "section",
+          "title": "Time Zone Handling",
+          "content": "\nWorking with time zones is generally considered one of the most unpleasant parts of\ntime series manipulation. As a result, many time series users choose to work with\ntime series in coordinated universal time or UTC, which is the successor to Greenwich\nMean Time and is the current international standard. Time zones are expressed as\noffsets from UTC; for example, New York is four hours behind UTC during daylight\nsaving time and five hours behind the rest of the year.\n\nIn Python, time zone information comes from the third-party pytz library (installable\nwith pip or conda), which exposes the Olson database, a compilation of world\ntime zone information. This is especially important for historical data because the\ndaylight saving time (DST) transition dates (and even UTC offsets) have been\nchanged numerous times depending on the whims of local governments. In the United\nStates, the DST transition times have been changed many times since 1900!\n\n```\nimport pytz\nlocal_tz = pytz.timezone('America/New_York')\n\nnow = datetime.now()\n\nnow = now.astimezone(local_tz)\n\nnow.year\n\nnow.hour\n\nnow.tzinfo\n```\n\n```\nfor tz in pytz.common_timezones:\nif 'America' in tz:\nprint(tz)\n```\n\n\n",
+          "children": [
+            {
+              "id": "2.2.1",
+              "level": 3,
+              "type": "section",
+              "title": "Converting Between String and Datetime",
+              "content": "Format datetime objects and pandas Timestamp objects as strings using str or the strftime method, passing a format specification.\n```\nstamp = datetime(2021, 1, 3)\nstr(stamp)\nstamp.strftime('%Y-%m-%d')\n\ns = stamp.strftime('%m/%d/%Y')\n```\n\nConvert from string to datetime:\n```\nd = datetime.strptime(s, '%m/%d/%Y')\n```\n\n",
+              "children": [],
+              "content_elements": [
+                {
+                  "type": "text",
+                  "raw": "Format datetime objects and pandas Timestamp objects as strings using str or the strftime method, passing a format specification.",
+                  "clean": "Format datetime objects and pandas Timestamp objects as strings using str or the strftime method, passing a format specification.",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 1,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\nstamp = datetime(2021, 1, 3)\nstr(stamp)\nstamp.strftime('%Y-%m-%d')\n\ns = stamp.strftime('%m/%d/%Y')\n```",
+                  "clean": "```\nstamp = datetime(2021, 1, 3)\nstr(stamp)\nstamp.strftime('%Y-%m-%d')\n\ns = stamp.strftime('%m/%d/%Y')\n```",
+                  "meta": {
+                    "line_start": 2,
+                    "line_end": 8,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 9,
+                    "line_end": 9,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "Convert from string to datetime:",
+                  "clean": "Convert from string to datetime:",
+                  "meta": {
+                    "line_start": 10,
+                    "line_end": 10,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\nd = datetime.strptime(s, '%m/%d/%Y')\n```",
+                  "clean": "```\nd = datetime.strptime(s, '%m/%d/%Y')\n```",
+                  "meta": {
+                    "line_start": 11,
+                    "line_end": 13,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 14,
+                    "line_end": 14,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            }
+          ],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "Working with time zones is generally considered one of the most unpleasant parts of",
+              "clean": "Working with time zones is generally considered one of the most unpleasant parts of",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "time series manipulation. As a result, many time series users choose to work with",
+              "clean": "time series manipulation. As a result, many time series users choose to work with",
+              "meta": {
+                "line_start": 3,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "time series in coordinated universal time or UTC, which is the successor to Greenwich",
+              "clean": "time series in coordinated universal time or UTC, which is the successor to Greenwich",
+              "meta": {
+                "line_start": 4,
+                "line_end": 4,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "Mean Time and is the current international standard. Time zones are expressed as",
+              "clean": "Mean Time and is the current international standard. Time zones are expressed as",
+              "meta": {
+                "line_start": 5,
+                "line_end": 5,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "offsets from UTC; for example, New York is four hours behind UTC during daylight",
+              "clean": "offsets from UTC; for example, New York is four hours behind UTC during daylight",
+              "meta": {
+                "line_start": 6,
+                "line_end": 6,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "saving time and five hours behind the rest of the year.",
+              "clean": "saving time and five hours behind the rest of the year.",
+              "meta": {
+                "line_start": 7,
+                "line_end": 7,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 8,
+                "line_end": 8,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "In Python, time zone information comes from the third-party pytz library (installable",
+              "clean": "In Python, time zone information comes from the third-party pytz library (installable",
+              "meta": {
+                "line_start": 9,
+                "line_end": 9,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "with pip or conda), which exposes the Olson database, a compilation of world",
+              "clean": "with pip or conda), which exposes the Olson database, a compilation of world",
+              "meta": {
+                "line_start": 10,
+                "line_end": 10,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "time zone information. This is especially important for historical data because the",
+              "clean": "time zone information. This is especially important for historical data because the",
+              "meta": {
+                "line_start": 11,
+                "line_end": 11,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "daylight saving time (DST) transition dates (and even UTC offsets) have been",
+              "clean": "daylight saving time (DST) transition dates (and even UTC offsets) have been",
+              "meta": {
+                "line_start": 12,
+                "line_end": 12,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "changed numerous times depending on the whims of local governments. In the United",
+              "clean": "changed numerous times depending on the whims of local governments. In the United",
+              "meta": {
+                "line_start": 13,
+                "line_end": 13,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "States, the DST transition times have been changed many times since 1900!",
+              "clean": "States, the DST transition times have been changed many times since 1900!",
+              "meta": {
+                "line_start": 14,
+                "line_end": 14,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 15,
+                "line_end": 15,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "code",
+              "raw": "```\nimport pytz\nlocal_tz = pytz.timezone('America/New_York')\n\nnow = datetime.now()\n\nnow = now.astimezone(local_tz)\n\nnow.year\n\nnow.hour\n\nnow.tzinfo\n```",
+              "clean": "```\nimport pytz\nlocal_tz = pytz.timezone('America/New_York')\n\nnow = datetime.now()\n\nnow = now.astimezone(local_tz)\n\nnow.year\n\nnow.hour\n\nnow.tzinfo\n```",
+              "meta": {
+                "line_start": 16,
+                "line_end": 29,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 30,
+                "line_end": 30,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "code",
+              "raw": "```\nfor tz in pytz.common_timezones:\nif 'America' in tz:\nprint(tz)\n```",
+              "clean": "```\nfor tz in pytz.common_timezones:\nif 'America' in tz:\nprint(tz)\n```",
+              "meta": {
+                "line_start": 31,
+                "line_end": 35,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 36,
+                "line_end": 36,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 37,
+                "line_end": 37,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "2.3",
+          "level": 2,
+          "type": "section",
+          "title": "Exercise:",
+          "content": "```\nvalue = '2021-01-03'\ndatetime.strptime(value, '%Y-%m-%d')\ndatestrs = ['7/6/2021', '8/6/2021']\n[datetime.strptime(x, '%m/%d/%Y') for x in datestrs]\n```\n\npandas is generally oriented toward working with arrays of dates, whether used as an\naxis index or a column in a DataFrame. The to_datetime method parses many different\nkinds of date representations. Standard date formats like ISO 8601 can be\nparsed very quickly:\n```\ndatestrs = ['2021-07-06 12:00:00', '2021-08-06 00:00:00']\npd.to_datetime(datestrs)\n```\n\n",
+          "children": [],
+          "content_elements": [
+            {
+              "type": "code",
+              "raw": "```\nvalue = '2021-01-03'\ndatetime.strptime(value, '%Y-%m-%d')\ndatestrs = ['7/6/2021', '8/6/2021']\n[datetime.strptime(x, '%m/%d/%Y') for x in datestrs]\n```",
+              "clean": "```\nvalue = '2021-01-03'\ndatetime.strptime(value, '%Y-%m-%d')\ndatestrs = ['7/6/2021', '8/6/2021']\n[datetime.strptime(x, '%m/%d/%Y') for x in datestrs]\n```",
+              "meta": {
+                "line_start": 1,
+                "line_end": 6,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 7,
+                "line_end": 7,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "pandas is generally oriented toward working with arrays of dates, whether used as an",
+              "clean": "pandas is generally oriented toward working with arrays of dates, whether used as an",
+              "meta": {
+                "line_start": 8,
+                "line_end": 8,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "axis index or a column in a DataFrame. The to_datetime method parses many different",
+              "clean": "axis index or a column in a DataFrame. The to_datetime method parses many different",
+              "meta": {
+                "line_start": 9,
+                "line_end": 9,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "kinds of date representations. Standard date formats like ISO 8601 can be",
+              "clean": "kinds of date representations. Standard date formats like ISO 8601 can be",
+              "meta": {
+                "line_start": 10,
+                "line_end": 10,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "parsed very quickly:",
+              "clean": "parsed very quickly:",
+              "meta": {
+                "line_start": 11,
+                "line_end": 11,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "code",
+              "raw": "```\ndatestrs = ['2021-07-06 12:00:00', '2021-08-06 00:00:00']\npd.to_datetime(datestrs)\n```",
+              "clean": "```\ndatestrs = ['2021-07-06 12:00:00', '2021-08-06 00:00:00']\npd.to_datetime(datestrs)\n```",
+              "meta": {
+                "line_start": 12,
+                "line_end": 15,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 16,
+                "line_end": 16,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "2.4",
+          "level": 2,
+          "type": "section",
+          "title": "Time Series Basics",
+          "content": "A basic kind of time series object in pandas is a Series indexed by timestamps, which\nis often represented external to pandas as Python strings or datetime objects.\n\n```\nfrom datetime import datetime\ndates = [datetime(2021, 1, 2), datetime(2021, 1, 5),\ndatetime(2021, 1, 7), datetime(2021, 1, 8),\ndatetime(2021, 1, 10), datetime(2021, 1, 12)]\nts = pd.Series(np.random.randn(6), index=dates)\nts\n```\n\n```\nts.index\n```\n\nLike other Series, arithmetic operations between differently indexed time series automatically\nalign on the dates:\n```\nts + ts[::2]\n```\n\n",
+          "children": [
+            {
+              "id": "2.4.1",
+              "level": 3,
+              "type": "section",
+              "title": "Indexing, Selection, Subsetting",
+              "content": "Time series behaves like any other pandas.Series when you are indexing and selecting\ndata based on label:\n```\nstamp = ts.index[2]\nts[stamp]\n```\n\nFor longer time series, a year or only a year and month can be passed to easily select\nslices of data:\n```\nlonger_ts = pd.Series(np.random.randn(1000),\nindex=pd.date_range('1/1/2023', periods=1000))\nlonger_ts\n```\n\n```\nlonger_ts['2023-5']\n```\n\n",
+              "children": [],
+              "content_elements": [
+                {
+                  "type": "text",
+                  "raw": "Time series behaves like any other pandas.Series when you are indexing and selecting",
+                  "clean": "Time series behaves like any other pandas.Series when you are indexing and selecting",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 1,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "data based on label:",
+                  "clean": "data based on label:",
+                  "meta": {
+                    "line_start": 2,
+                    "line_end": 2,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\nstamp = ts.index[2]\nts[stamp]\n```",
+                  "clean": "```\nstamp = ts.index[2]\nts[stamp]\n```",
+                  "meta": {
+                    "line_start": 3,
+                    "line_end": 6,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 7,
+                    "line_end": 7,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "For longer time series, a year or only a year and month can be passed to easily select",
+                  "clean": "For longer time series, a year or only a year and month can be passed to easily select",
+                  "meta": {
+                    "line_start": 8,
+                    "line_end": 8,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "slices of data:",
+                  "clean": "slices of data:",
+                  "meta": {
+                    "line_start": 9,
+                    "line_end": 9,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\nlonger_ts = pd.Series(np.random.randn(1000),\nindex=pd.date_range('1/1/2023', periods=1000))\nlonger_ts\n```",
+                  "clean": "```\nlonger_ts = pd.Series(np.random.randn(1000),\nindex=pd.date_range('1/1/2023', periods=1000))\nlonger_ts\n```",
+                  "meta": {
+                    "line_start": 10,
+                    "line_end": 14,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 15,
+                    "line_end": 15,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\nlonger_ts['2023-5']\n```",
+                  "clean": "```\nlonger_ts['2023-5']\n```",
+                  "meta": {
+                    "line_start": 16,
+                    "line_end": 18,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 19,
+                    "line_end": 19,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            },
+            {
+              "id": "2.4.2",
+              "level": 3,
+              "type": "section",
+              "title": "Time Series with Duplicate Indices",
+              "content": "In some applications, there may be multiple data observations falling on a particular\ntimestamp. Here is an example:\n```\ndates = pd.DatetimeIndex(['1/1/2000', '1/2/2000', '1/2/2000',\n'1/2/2000', '1/3/2000'])\ndup_ts = pd.Series(np.arange(5), index=dates)\ndup_ts\n```\n\nSuppose you wanted to aggregate the data having non-unique timestamps. One way\nto do this is to use groupby and pass level=0:\n```\ngrouped = dup_ts.groupby(level=0)\ngrouped.mean()\ngrouped.count()\n```\n\n",
+              "children": [],
+              "content_elements": [
+                {
+                  "type": "text",
+                  "raw": "In some applications, there may be multiple data observations falling on a particular",
+                  "clean": "In some applications, there may be multiple data observations falling on a particular",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 1,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "timestamp. Here is an example:",
+                  "clean": "timestamp. Here is an example:",
+                  "meta": {
+                    "line_start": 2,
+                    "line_end": 2,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\ndates = pd.DatetimeIndex(['1/1/2000', '1/2/2000', '1/2/2000',\n'1/2/2000', '1/3/2000'])\ndup_ts = pd.Series(np.arange(5), index=dates)\ndup_ts\n```",
+                  "clean": "```\ndates = pd.DatetimeIndex(['1/1/2000', '1/2/2000', '1/2/2000',\n'1/2/2000', '1/3/2000'])\ndup_ts = pd.Series(np.arange(5), index=dates)\ndup_ts\n```",
+                  "meta": {
+                    "line_start": 3,
+                    "line_end": 8,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 9,
+                    "line_end": 9,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "Suppose you wanted to aggregate the data having non-unique timestamps. One way",
+                  "clean": "Suppose you wanted to aggregate the data having non-unique timestamps. One way",
+                  "meta": {
+                    "line_start": 10,
+                    "line_end": 10,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "to do this is to use groupby and pass level=0:",
+                  "clean": "to do this is to use groupby and pass level=0:",
+                  "meta": {
+                    "line_start": 11,
+                    "line_end": 11,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\ngrouped = dup_ts.groupby(level=0)\ngrouped.mean()\ngrouped.count()\n```",
+                  "clean": "```\ngrouped = dup_ts.groupby(level=0)\ngrouped.mean()\ngrouped.count()\n```",
+                  "meta": {
+                    "line_start": 12,
+                    "line_end": 16,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 17,
+                    "line_end": 17,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            }
+          ],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "A basic kind of time series object in pandas is a Series indexed by timestamps, which",
+              "clean": "A basic kind of time series object in pandas is a Series indexed by timestamps, which",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "is often represented external to pandas as Python strings or datetime objects.",
+              "clean": "is often represented external to pandas as Python strings or datetime objects.",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 3,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "code",
+              "raw": "```\nfrom datetime import datetime\ndates = [datetime(2021, 1, 2), datetime(2021, 1, 5),\ndatetime(2021, 1, 7), datetime(2021, 1, 8),\ndatetime(2021, 1, 10), datetime(2021, 1, 12)]\nts = pd.Series(np.random.randn(6), index=dates)\nts\n```",
+              "clean": "```\nfrom datetime import datetime\ndates = [datetime(2021, 1, 2), datetime(2021, 1, 5),\ndatetime(2021, 1, 7), datetime(2021, 1, 8),\ndatetime(2021, 1, 10), datetime(2021, 1, 12)]\nts = pd.Series(np.random.randn(6), index=dates)\nts\n```",
+              "meta": {
+                "line_start": 4,
+                "line_end": 11,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 12,
+                "line_end": 12,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "code",
+              "raw": "```\nts.index\n```",
+              "clean": "```\nts.index\n```",
+              "meta": {
+                "line_start": 13,
+                "line_end": 15,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 16,
+                "line_end": 16,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "Like other Series, arithmetic operations between differently indexed time series automatically",
+              "clean": "Like other Series, arithmetic operations between differently indexed time series automatically",
+              "meta": {
+                "line_start": 17,
+                "line_end": 17,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "align on the dates:",
+              "clean": "align on the dates:",
+              "meta": {
+                "line_start": 18,
+                "line_end": 18,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "code",
+              "raw": "```\nts + ts[::2]\n```",
+              "clean": "```\nts + ts[::2]\n```",
+              "meta": {
+                "line_start": 19,
+                "line_end": 21,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 22,
+                "line_end": 22,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "2.5",
+          "level": 2,
+          "type": "section",
+          "title": "Date Ranges, Frequencies, and Shifting",
+          "content": "Generic time series in pandas are assumed to be irregular; that is, they have no fixed\nfrequency. For many applications this is sufficient. However, it’s often desirable to\nwork relative to a fixed frequency, such as daily, monthly, or every 15 minutes, even if\nthat means introducing missing values into a time series. Fortunately pandas has a\nfull suite of standard time series frequencies and tools for resampling, inferring frequencies,\nand generating fixed-frequency date ranges. For example, you can convert\nthe sample time series to be fixed daily frequency by calling resample:\n\n```\nfrom datetime import datetime\ndates = [datetime(2021, 1, 2), datetime(2021, 1, 5),\ndatetime(2021, 1, 7), datetime(2021, 1, 8),\ndatetime(2021, 1, 10), datetime(2021, 1, 12)]\nts = pd.Series(np.random.randn(6), index=dates)\nts\n```\n\n```\nts.resample('D')\n```\n\n```\nresampler = ts.resample('D')\nresampler\n```\n\n",
+          "children": [
+            {
+              "id": "2.5.1",
+              "level": 3,
+              "type": "section",
+              "title": "Generating Date Ranges",
+              "content": "pandas.date_range is responsible for\ngenerating a DatetimeIndex with an indicated length according to a particular\nfrequency:\n```\nindex = pd.date_range('2012-04-01', '2012-06-01')\nindex\n```\n\n```\npd.date_range(start='2012-04-01', periods=20)\npd.date_range(end='2012-06-01', periods=20)\n```\n\n```\npd.date_range('2000-01-01', '2000-12-01', freq='BM')\n```\n\n```\npd.date_range('2012-05-02 12:56:31', periods=5)\n```\n\n```\npd.date_range('2012-05-02 12:56:31', periods=5, normalize=True)\n```\n\n",
+              "children": [],
+              "content_elements": [
+                {
+                  "type": "text",
+                  "raw": "pandas.date_range is responsible for",
+                  "clean": "pandas.date_range is responsible for",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 1,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "generating a DatetimeIndex with an indicated length according to a particular",
+                  "clean": "generating a DatetimeIndex with an indicated length according to a particular",
+                  "meta": {
+                    "line_start": 2,
+                    "line_end": 2,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "frequency:",
+                  "clean": "frequency:",
+                  "meta": {
+                    "line_start": 3,
+                    "line_end": 3,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\nindex = pd.date_range('2012-04-01', '2012-06-01')\nindex\n```",
+                  "clean": "```\nindex = pd.date_range('2012-04-01', '2012-06-01')\nindex\n```",
+                  "meta": {
+                    "line_start": 4,
+                    "line_end": 7,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 8,
+                    "line_end": 8,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\npd.date_range(start='2012-04-01', periods=20)\npd.date_range(end='2012-06-01', periods=20)\n```",
+                  "clean": "```\npd.date_range(start='2012-04-01', periods=20)\npd.date_range(end='2012-06-01', periods=20)\n```",
+                  "meta": {
+                    "line_start": 9,
+                    "line_end": 12,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 13,
+                    "line_end": 13,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\npd.date_range('2000-01-01', '2000-12-01', freq='BM')\n```",
+                  "clean": "```\npd.date_range('2000-01-01', '2000-12-01', freq='BM')\n```",
+                  "meta": {
+                    "line_start": 14,
+                    "line_end": 16,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 17,
+                    "line_end": 17,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\npd.date_range('2012-05-02 12:56:31', periods=5)\n```",
+                  "clean": "```\npd.date_range('2012-05-02 12:56:31', periods=5)\n```",
+                  "meta": {
+                    "line_start": 18,
+                    "line_end": 20,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 21,
+                    "line_end": 21,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\npd.date_range('2012-05-02 12:56:31', periods=5, normalize=True)\n```",
+                  "clean": "```\npd.date_range('2012-05-02 12:56:31', periods=5, normalize=True)\n```",
+                  "meta": {
+                    "line_start": 22,
+                    "line_end": 24,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 25,
+                    "line_end": 25,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            },
+            {
+              "id": "2.5.2",
+              "level": 3,
+              "type": "section",
+              "title": "Frequencies and Date Offsets",
+              "content": "\n```\nfrom pandas.tseries.offsets import Hour, Minute\nhour = Hour()\nhour\n```\n\n```\nfour_hours = Hour(4)\nfour_hours\n```\n\n",
+              "children": [
+                {
+                  "id": "2.5.2.1",
+                  "level": 4,
+                  "type": "section",
+                  "title": "Week of month dates",
+                  "content": "One useful frequency class is “week of month,” starting with WOM. This enables you to\nget dates like the third Friday of each month:\n```\nrng = pd.date_range('2012-01-01', '2012-09-01', freq='WOM-3FRI')\nlist(rng)\n```\n\n",
+                  "children": [],
+                  "content_elements": [
+                    {
+                      "type": "text",
+                      "raw": "One useful frequency class is “week of month,” starting with WOM. This enables you to",
+                      "clean": "One useful frequency class is “week of month,” starting with WOM. This enables you to",
+                      "meta": {
+                        "line_start": 1,
+                        "line_end": 1,
+                        "marker": null,
+                        "url": null,
+                        "lang": null
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "raw": "get dates like the third Friday of each month:",
+                      "clean": "get dates like the third Friday of each month:",
+                      "meta": {
+                        "line_start": 2,
+                        "line_end": 2,
+                        "marker": null,
+                        "url": null,
+                        "lang": null
+                      }
+                    },
+                    {
+                      "type": "code",
+                      "raw": "```\nrng = pd.date_range('2012-01-01', '2012-09-01', freq='WOM-3FRI')\nlist(rng)\n```",
+                      "clean": "```\nrng = pd.date_range('2012-01-01', '2012-09-01', freq='WOM-3FRI')\nlist(rng)\n```",
+                      "meta": {
+                        "line_start": 3,
+                        "line_end": 6,
+                        "marker": null,
+                        "url": null,
+                        "lang": null
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "raw": "",
+                      "clean": "",
+                      "meta": {
+                        "line_start": 7,
+                        "line_end": 7,
+                        "marker": null,
+                        "url": null,
+                        "lang": null
+                      }
+                    }
+                  ]
+                }
+              ],
+              "content_elements": [
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 1,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\nfrom pandas.tseries.offsets import Hour, Minute\nhour = Hour()\nhour\n```",
+                  "clean": "```\nfrom pandas.tseries.offsets import Hour, Minute\nhour = Hour()\nhour\n```",
+                  "meta": {
+                    "line_start": 2,
+                    "line_end": 6,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 7,
+                    "line_end": 7,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\nfour_hours = Hour(4)\nfour_hours\n```",
+                  "clean": "```\nfour_hours = Hour(4)\nfour_hours\n```",
+                  "meta": {
+                    "line_start": 8,
+                    "line_end": 11,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 12,
+                    "line_end": 12,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            },
+            {
+              "id": "2.5.3",
+              "level": 3,
+              "type": "section",
+              "title": "Shifting (Leading and Lagging) Data",
+              "content": "“Shifting” refers to moving data backward and forward through time. Both Series and\nDataFrame have a shift method for doing naive shifts forward or backward, leaving\nthe index unmodified:\n\n```\nts = pd.Series(np.random.randn(4),\nindex=pd.date_range('1/1/2000', periods=4, freq='M'))\nts\nts.shift(2)\nts.shift(-2)\n```\n\n",
+              "children": [],
+              "content_elements": [
+                {
+                  "type": "text",
+                  "raw": "“Shifting” refers to moving data backward and forward through time. Both Series and",
+                  "clean": "“Shifting” refers to moving data backward and forward through time. Both Series and",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 1,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "DataFrame have a shift method for doing naive shifts forward or backward, leaving",
+                  "clean": "DataFrame have a shift method for doing naive shifts forward or backward, leaving",
+                  "meta": {
+                    "line_start": 2,
+                    "line_end": 2,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "the index unmodified:",
+                  "clean": "the index unmodified:",
+                  "meta": {
+                    "line_start": 3,
+                    "line_end": 3,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 4,
+                    "line_end": 4,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\nts = pd.Series(np.random.randn(4),\nindex=pd.date_range('1/1/2000', periods=4, freq='M'))\nts\nts.shift(2)\nts.shift(-2)\n```",
+                  "clean": "```\nts = pd.Series(np.random.randn(4),\nindex=pd.date_range('1/1/2000', periods=4, freq='M'))\nts\nts.shift(2)\nts.shift(-2)\n```",
+                  "meta": {
+                    "line_start": 5,
+                    "line_end": 11,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 12,
+                    "line_end": 12,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            }
+          ],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "Generic time series in pandas are assumed to be irregular; that is, they have no fixed",
+              "clean": "Generic time series in pandas are assumed to be irregular; that is, they have no fixed",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "frequency. For many applications this is sufficient. However, it’s often desirable to",
+              "clean": "frequency. For many applications this is sufficient. However, it’s often desirable to",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "work relative to a fixed frequency, such as daily, monthly, or every 15 minutes, even if",
+              "clean": "work relative to a fixed frequency, such as daily, monthly, or every 15 minutes, even if",
+              "meta": {
+                "line_start": 3,
+                "line_end": 3,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "that means introducing missing values into a time series. Fortunately pandas has a",
+              "clean": "that means introducing missing values into a time series. Fortunately pandas has a",
+              "meta": {
+                "line_start": 4,
+                "line_end": 4,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "full suite of standard time series frequencies and tools for resampling, inferring frequencies,",
+              "clean": "full suite of standard time series frequencies and tools for resampling, inferring frequencies,",
+              "meta": {
+                "line_start": 5,
+                "line_end": 5,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "and generating fixed-frequency date ranges. For example, you can convert",
+              "clean": "and generating fixed-frequency date ranges. For example, you can convert",
+              "meta": {
+                "line_start": 6,
+                "line_end": 6,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "the sample time series to be fixed daily frequency by calling resample:",
+              "clean": "the sample time series to be fixed daily frequency by calling resample:",
+              "meta": {
+                "line_start": 7,
+                "line_end": 7,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 8,
+                "line_end": 8,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "code",
+              "raw": "```\nfrom datetime import datetime\ndates = [datetime(2021, 1, 2), datetime(2021, 1, 5),\ndatetime(2021, 1, 7), datetime(2021, 1, 8),\ndatetime(2021, 1, 10), datetime(2021, 1, 12)]\nts = pd.Series(np.random.randn(6), index=dates)\nts\n```",
+              "clean": "```\nfrom datetime import datetime\ndates = [datetime(2021, 1, 2), datetime(2021, 1, 5),\ndatetime(2021, 1, 7), datetime(2021, 1, 8),\ndatetime(2021, 1, 10), datetime(2021, 1, 12)]\nts = pd.Series(np.random.randn(6), index=dates)\nts\n```",
+              "meta": {
+                "line_start": 9,
+                "line_end": 16,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 17,
+                "line_end": 17,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "code",
+              "raw": "```\nts.resample('D')\n```",
+              "clean": "```\nts.resample('D')\n```",
+              "meta": {
+                "line_start": 18,
+                "line_end": 20,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 21,
+                "line_end": 21,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "code",
+              "raw": "```\nresampler = ts.resample('D')\nresampler\n```",
+              "clean": "```\nresampler = ts.resample('D')\nresampler\n```",
+              "meta": {
+                "line_start": 22,
+                "line_end": 25,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 26,
+                "line_end": 26,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "2.6",
+          "level": 2,
+          "type": "section",
+          "title": "Time Zone Handling in Pandas",
+          "content": "\n",
+          "children": [
+            {
+              "id": "2.6.1",
+              "level": 3,
+              "type": "section",
+              "title": "Time Zone Localization and Conversion",
+              "content": "By default, time series in pandas are time zone naive. For example, consider the following\ntime series:\n```\nrng = pd.date_range('3/9/2012 9:30', periods=6, freq='D')\nts = pd.Series(np.random.randn(len(rng)), index=rng)\nts\n```\n\n",
+              "children": [],
+              "content_elements": [
+                {
+                  "type": "text",
+                  "raw": "By default, time series in pandas are time zone naive. For example, consider the following",
+                  "clean": "By default, time series in pandas are time zone naive. For example, consider the following",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 1,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "time series:",
+                  "clean": "time series:",
+                  "meta": {
+                    "line_start": 2,
+                    "line_end": 2,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\nrng = pd.date_range('3/9/2012 9:30', periods=6, freq='D')\nts = pd.Series(np.random.randn(len(rng)), index=rng)\nts\n```",
+                  "clean": "```\nrng = pd.date_range('3/9/2012 9:30', periods=6, freq='D')\nts = pd.Series(np.random.randn(len(rng)), index=rng)\nts\n```",
+                  "meta": {
+                    "line_start": 3,
+                    "line_end": 7,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 8,
+                    "line_end": 8,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            },
+            {
+              "id": "2.6.2",
+              "level": 3,
+              "type": "section",
+              "title": "Operations with Time Zone−Aware Timestamp Objects",
+              "content": "Similar to time series and date ranges, individual Timestamp objects similarly can be\nlocalized from naive to time zone–aware and converted from one time zone to\nanother:\n```\nstamp = pd.Timestamp('2011-03-12 04:00')\nstamp_utc = stamp.tz_localize('utc')\nstamp_utc.tz_convert('America/New_York')\n```\n\n",
+              "children": [],
+              "content_elements": [
+                {
+                  "type": "text",
+                  "raw": "Similar to time series and date ranges, individual Timestamp objects similarly can be",
+                  "clean": "Similar to time series and date ranges, individual Timestamp objects similarly can be",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 1,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "localized from naive to time zone–aware and converted from one time zone to",
+                  "clean": "localized from naive to time zone–aware and converted from one time zone to",
+                  "meta": {
+                    "line_start": 2,
+                    "line_end": 2,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "another:",
+                  "clean": "another:",
+                  "meta": {
+                    "line_start": 3,
+                    "line_end": 3,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\nstamp = pd.Timestamp('2011-03-12 04:00')\nstamp_utc = stamp.tz_localize('utc')\nstamp_utc.tz_convert('America/New_York')\n```",
+                  "clean": "```\nstamp = pd.Timestamp('2011-03-12 04:00')\nstamp_utc = stamp.tz_localize('utc')\nstamp_utc.tz_convert('America/New_York')\n```",
+                  "meta": {
+                    "line_start": 4,
+                    "line_end": 8,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 9,
+                    "line_end": 9,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            },
+            {
+              "id": "2.6.3",
+              "level": 3,
+              "type": "section",
+              "title": "Operations Between Different Time Zones",
+              "content": "If two time series with different time zones are combined, the result will be UTC.\nSince the timestamps are stored under the hood in UTC, this is a straightforward\noperation and requires no conversion to happen:\n```\nrng = pd.date_range('3/7/2012 9:30', periods=10, freq='B')\nts = pd.Series(np.random.randn(len(rng)), index=rng)\nts\nts1 = ts[:7].tz_localize('Europe/London')\nts2 = ts1[2:].tz_convert('Europe/Moscow')\nresult = ts1 + ts2\nresult.index\n```\n\n",
+              "children": [],
+              "content_elements": [
+                {
+                  "type": "text",
+                  "raw": "If two time series with different time zones are combined, the result will be UTC.",
+                  "clean": "If two time series with different time zones are combined, the result will be UTC.",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 1,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "Since the timestamps are stored under the hood in UTC, this is a straightforward",
+                  "clean": "Since the timestamps are stored under the hood in UTC, this is a straightforward",
+                  "meta": {
+                    "line_start": 2,
+                    "line_end": 2,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "operation and requires no conversion to happen:",
+                  "clean": "operation and requires no conversion to happen:",
+                  "meta": {
+                    "line_start": 3,
+                    "line_end": 3,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\nrng = pd.date_range('3/7/2012 9:30', periods=10, freq='B')\nts = pd.Series(np.random.randn(len(rng)), index=rng)\nts\nts1 = ts[:7].tz_localize('Europe/London')\nts2 = ts1[2:].tz_convert('Europe/Moscow')\nresult = ts1 + ts2\nresult.index\n```",
+                  "clean": "```\nrng = pd.date_range('3/7/2012 9:30', periods=10, freq='B')\nts = pd.Series(np.random.randn(len(rng)), index=rng)\nts\nts1 = ts[:7].tz_localize('Europe/London')\nts2 = ts1[2:].tz_convert('Europe/Moscow')\nresult = ts1 + ts2\nresult.index\n```",
+                  "meta": {
+                    "line_start": 4,
+                    "line_end": 12,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 13,
+                    "line_end": 13,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            }
+          ],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "2.7",
+          "level": 2,
+          "type": "section",
+          "title": "Periods and Period Arithmetic",
+          "content": "Periods represent timespans, like days, months, quarters, or years. The Period class\nrepresents this data type, requiring a string or integer and a frequency.\n```\np = pd.Period(2007, freq='A-DEC')\np\n```\n\n",
+          "children": [
+            {
+              "id": "2.7.1",
+              "level": 3,
+              "type": "section",
+              "title": "Period Frequency Conversion",
+              "content": "```\np = pd.Period('2007', freq='A-DEC')\np\np.asfreq('M', how='start')\np.asfreq('M', how='end')\n```\n\n",
+              "children": [],
+              "content_elements": [
+                {
+                  "type": "code",
+                  "raw": "```\np = pd.Period('2007', freq='A-DEC')\np\np.asfreq('M', how='start')\np.asfreq('M', how='end')\n```",
+                  "clean": "```\np = pd.Period('2007', freq='A-DEC')\np\np.asfreq('M', how='start')\np.asfreq('M', how='end')\n```",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 6,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 7,
+                    "line_end": 7,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            },
+            {
+              "id": "2.7.2",
+              "level": 3,
+              "type": "section",
+              "title": "Quarterly Period Frequencies",
+              "content": "```\np = pd.Period('2012Q4', freq='Q-JAN')\np\n```\n\n",
+              "children": [],
+              "content_elements": [
+                {
+                  "type": "code",
+                  "raw": "```\np = pd.Period('2012Q4', freq='Q-JAN')\np\n```",
+                  "clean": "```\np = pd.Period('2012Q4', freq='Q-JAN')\np\n```",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 4,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 5,
+                    "line_end": 5,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            },
+            {
+              "id": "2.7.3",
+              "level": 3,
+              "type": "section",
+              "title": "Converting Timestamps to Periods (and Back)",
+              "content": "```\nrng = pd.date_range('2000-01-01', periods=3, freq='M')\nts = pd.Series(np.random.randn(3), index=rng)\nts\npts = ts.to_period()\npts\n```\n\n",
+              "children": [],
+              "content_elements": [
+                {
+                  "type": "code",
+                  "raw": "```\nrng = pd.date_range('2000-01-01', periods=3, freq='M')\nts = pd.Series(np.random.randn(3), index=rng)\nts\npts = ts.to_period()\npts\n```",
+                  "clean": "```\nrng = pd.date_range('2000-01-01', periods=3, freq='M')\nts = pd.Series(np.random.randn(3), index=rng)\nts\npts = ts.to_period()\npts\n```",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 7,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 8,
+                    "line_end": 8,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            }
+          ],
+          "content_elements": [
+            {
+              "type": "text",
+              "raw": "Periods represent timespans, like days, months, quarters, or years. The Period class",
+              "clean": "Periods represent timespans, like days, months, quarters, or years. The Period class",
+              "meta": {
+                "line_start": 1,
+                "line_end": 1,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "represents this data type, requiring a string or integer and a frequency.",
+              "clean": "represents this data type, requiring a string or integer and a frequency.",
+              "meta": {
+                "line_start": 2,
+                "line_end": 2,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "code",
+              "raw": "```\np = pd.Period(2007, freq='A-DEC')\np\n```",
+              "clean": "```\np = pd.Period(2007, freq='A-DEC')\np\n```",
+              "meta": {
+                "line_start": 3,
+                "line_end": 6,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 7,
+                "line_end": 7,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        },
+        {
+          "id": "2.8",
+          "level": 2,
+          "type": "section",
+          "title": "Resampling and Frequency Conversion",
+          "content": "```\nrng = pd.date_range('2000-01-01', periods=100, freq='D')\nts = pd.Series(np.random.randn(len(rng)), index=rng)\nts\nts.resample('M').mean()\nts.resample('M', kind='period').mean()\n```\n\n",
+          "children": [
+            {
+              "id": "2.8.1",
+              "level": 3,
+              "type": "section",
+              "title": "Downsampling",
+              "content": "```\nrng = pd.date_range('2000-01-01', periods=12, freq='T')\nts = pd.Series(np.arange(12), index=rng)\nts\n```\n\n```\nts.resample('5min', closed='right').sum()\n```\n\n```\nts.resample('5min', closed='right',\nlabel='right', loffset='-1s').sum()\n```\n\n",
+              "children": [
+                {
+                  "id": "2.8.1.1",
+                  "level": 4,
+                  "type": "section",
+                  "title": "Open-High-Low-Close (OHLC) resampling",
+                  "content": "```\nts.resample('5min').ohlc()\n```\n\n",
+                  "children": [],
+                  "content_elements": [
+                    {
+                      "type": "code",
+                      "raw": "```\nts.resample('5min').ohlc()\n```",
+                      "clean": "```\nts.resample('5min').ohlc()\n```",
+                      "meta": {
+                        "line_start": 1,
+                        "line_end": 3,
+                        "marker": null,
+                        "url": null,
+                        "lang": null
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "raw": "",
+                      "clean": "",
+                      "meta": {
+                        "line_start": 4,
+                        "line_end": 4,
+                        "marker": null,
+                        "url": null,
+                        "lang": null
+                      }
+                    }
+                  ]
+                }
+              ],
+              "content_elements": [
+                {
+                  "type": "code",
+                  "raw": "```\nrng = pd.date_range('2000-01-01', periods=12, freq='T')\nts = pd.Series(np.arange(12), index=rng)\nts\n```",
+                  "clean": "```\nrng = pd.date_range('2000-01-01', periods=12, freq='T')\nts = pd.Series(np.arange(12), index=rng)\nts\n```",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 5,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 6,
+                    "line_end": 6,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\nts.resample('5min', closed='right').sum()\n```",
+                  "clean": "```\nts.resample('5min', closed='right').sum()\n```",
+                  "meta": {
+                    "line_start": 7,
+                    "line_end": 9,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 10,
+                    "line_end": 10,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\nts.resample('5min', closed='right',\nlabel='right', loffset='-1s').sum()\n```",
+                  "clean": "```\nts.resample('5min', closed='right',\nlabel='right', loffset='-1s').sum()\n```",
+                  "meta": {
+                    "line_start": 11,
+                    "line_end": 14,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 15,
+                    "line_end": 15,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            },
+            {
+              "id": "2.8.2",
+              "level": 3,
+              "type": "section",
+              "title": "Upsampling and Interpolation",
+              "content": "```\nframe = pd.DataFrame(np.random.randn(2, 4),\nindex=pd.date_range('1/1/2000', periods=2,\nfreq='W-WED'),\ncolumns=['Colorado', 'Texas', 'New York', 'Ohio'])\nframe\n```\n\n```\nframe.resample('W-THU').ffill()\n```\n\n",
+              "children": [],
+              "content_elements": [
+                {
+                  "type": "code",
+                  "raw": "```\nframe = pd.DataFrame(np.random.randn(2, 4),\nindex=pd.date_range('1/1/2000', periods=2,\nfreq='W-WED'),\ncolumns=['Colorado', 'Texas', 'New York', 'Ohio'])\nframe\n```",
+                  "clean": "```\nframe = pd.DataFrame(np.random.randn(2, 4),\nindex=pd.date_range('1/1/2000', periods=2,\nfreq='W-WED'),\ncolumns=['Colorado', 'Texas', 'New York', 'Ohio'])\nframe\n```",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 7,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 8,
+                    "line_end": 8,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\nframe.resample('W-THU').ffill()\n```",
+                  "clean": "```\nframe.resample('W-THU').ffill()\n```",
+                  "meta": {
+                    "line_start": 9,
+                    "line_end": 11,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 12,
+                    "line_end": 12,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            },
+            {
+              "id": "2.8.3",
+              "level": 3,
+              "type": "section",
+              "title": "Resampling with Periods",
+              "content": "```\nframe = pd.DataFrame(np.random.randn(24, 4),\nindex=pd.period_range('1-2000', '12-2001',\nfreq='M'),\ncolumns=['Colorado', 'Texas', 'New York', 'Ohio'])\nframe[:5]\nannual_frame = frame.resample('A-DEC').mean()\nannual_frame\n```\n\n```\n# Q-DEC: Quarterly, year ending in December\nannual_frame.resample('Q-DEC').ffill()\nannual_frame.resample('Q-DEC', convention='end').ffill()\n```\n\n```\nannual_frame.resample('Q-MAR').ffill()\n```\n\n",
+              "children": [],
+              "content_elements": [
+                {
+                  "type": "code",
+                  "raw": "```\nframe = pd.DataFrame(np.random.randn(24, 4),\nindex=pd.period_range('1-2000', '12-2001',\nfreq='M'),\ncolumns=['Colorado', 'Texas', 'New York', 'Ohio'])\nframe[:5]\nannual_frame = frame.resample('A-DEC').mean()\nannual_frame\n```",
+                  "clean": "```\nframe = pd.DataFrame(np.random.randn(24, 4),\nindex=pd.period_range('1-2000', '12-2001',\nfreq='M'),\ncolumns=['Colorado', 'Texas', 'New York', 'Ohio'])\nframe[:5]\nannual_frame = frame.resample('A-DEC').mean()\nannual_frame\n```",
+                  "meta": {
+                    "line_start": 1,
+                    "line_end": 9,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 10,
+                    "line_end": 10,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\n# Q-DEC: Quarterly, year ending in December\nannual_frame.resample('Q-DEC').ffill()\nannual_frame.resample('Q-DEC', convention='end').ffill()\n```",
+                  "clean": "```\n# Q-DEC: Quarterly, year ending in December\nannual_frame.resample('Q-DEC').ffill()\nannual_frame.resample('Q-DEC', convention='end').ffill()\n```",
+                  "meta": {
+                    "line_start": 11,
+                    "line_end": 15,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 16,
+                    "line_end": 16,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "code",
+                  "raw": "```\nannual_frame.resample('Q-MAR').ffill()\n```",
+                  "clean": "```\nannual_frame.resample('Q-MAR').ffill()\n```",
+                  "meta": {
+                    "line_start": 17,
+                    "line_end": 19,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                },
+                {
+                  "type": "text",
+                  "raw": "",
+                  "clean": "",
+                  "meta": {
+                    "line_start": 20,
+                    "line_end": 20,
+                    "marker": null,
+                    "url": null,
+                    "lang": null
+                  }
+                }
+              ]
+            }
+          ],
+          "content_elements": [
+            {
+              "type": "code",
+              "raw": "```\nrng = pd.date_range('2000-01-01', periods=100, freq='D')\nts = pd.Series(np.random.randn(len(rng)), index=rng)\nts\nts.resample('M').mean()\nts.resample('M', kind='period').mean()\n```",
+              "clean": "```\nrng = pd.date_range('2000-01-01', periods=100, freq='D')\nts = pd.Series(np.random.randn(len(rng)), index=rng)\nts\nts.resample('M').mean()\nts.resample('M', kind='period').mean()\n```",
+              "meta": {
+                "line_start": 1,
+                "line_end": 7,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            },
+            {
+              "type": "text",
+              "raw": "",
+              "clean": "",
+              "meta": {
+                "line_start": 8,
+                "line_end": 8,
+                "marker": null,
+                "url": null,
+                "lang": null
+              }
+            }
+          ]
+        }
+      ],
+      "content_elements": [
+        {
+          "type": "text",
+          "raw": "Time series data is an important form of structured data in many different fields, such",
+          "clean": "Time series data is an important form of structured data in many different fields, such",
+          "meta": {
+            "line_start": 1,
+            "line_end": 1,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "as finance, economics, ecology, neuroscience, and physics. Anything that is observed",
+          "clean": "as finance, economics, ecology, neuroscience, and physics. Anything that is observed",
+          "meta": {
+            "line_start": 2,
+            "line_end": 2,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "or measured at many points in time forms a time series. Many time series are fixed",
+          "clean": "or measured at many points in time forms a time series. Many time series are fixed",
+          "meta": {
+            "line_start": 3,
+            "line_end": 3,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "frequency, which is to say that data points occur at regular intervals according to some",
+          "clean": "frequency, which is to say that data points occur at regular intervals according to some",
+          "meta": {
+            "line_start": 4,
+            "line_end": 4,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "rule, such as every 15 seconds, every 5 minutes, or once per month. Time series can",
+          "clean": "rule, such as every 15 seconds, every 5 minutes, or once per month. Time series can",
+          "meta": {
+            "line_start": 5,
+            "line_end": 5,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "also be irregular without a fixed unit of time or offset between units. How you mark",
+          "clean": "also be irregular without a fixed unit of time or offset between units. How you mark",
+          "meta": {
+            "line_start": 6,
+            "line_end": 6,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "and refer to time series data depends on the application, and you may have one of the",
+          "clean": "and refer to time series data depends on the application, and you may have one of the",
+          "meta": {
+            "line_start": 7,
+            "line_end": 7,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "following:",
+          "clean": "following:",
+          "meta": {
+            "line_start": 8,
+            "line_end": 8,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "",
+          "clean": "",
+          "meta": {
+            "line_start": 9,
+            "line_end": 9,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "- Timestamps, specific instants in time Fixed periods, such as the month January 2007 or the full year 2010",
+          "clean": "- Timestamps, specific instants in time Fixed periods, such as the month January 2007 or the full year 2010",
+          "meta": {
+            "line_start": 10,
+            "line_end": 10,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "- Intervals of time, indicated by a start and end timestamp. Periods can be thought",
+          "clean": "- Intervals of time, indicated by a start and end timestamp. Periods can be thought",
+          "meta": {
+            "line_start": 11,
+            "line_end": 11,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "of as special cases of intervals",
+          "clean": "of as special cases of intervals",
+          "meta": {
+            "line_start": 12,
+            "line_end": 12,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "- Experiment or elapsed time; each timestamp is a measure of time relative to a",
+          "clean": "- Experiment or elapsed time; each timestamp is a measure of time relative to a",
+          "meta": {
+            "line_start": 13,
+            "line_end": 13,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "particular start time (e.g., the diameter of a cookie baking each second since",
+          "clean": "particular start time (e.g., the diameter of a cookie baking each second since",
+          "meta": {
+            "line_start": 14,
+            "line_end": 14,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "being placed in the oven)",
+          "clean": "being placed in the oven)",
+          "meta": {
+            "line_start": 15,
+            "line_end": 15,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "",
+          "clean": "",
+          "meta": {
+            "line_start": 16,
+            "line_end": 16,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "# imports",
+          "clean": "# imports",
+          "meta": {
+            "line_start": 17,
+            "line_end": 17,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "import pandas as pd",
+          "clean": "import pandas as pd",
+          "meta": {
+            "line_start": 18,
+            "line_end": 18,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "import numpy as np",
+          "clean": "import numpy as np",
+          "meta": {
+            "line_start": 19,
+            "line_end": 19,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "import matplotlib.pyplot as plt",
+          "clean": "import matplotlib.pyplot as plt",
+          "meta": {
+            "line_start": 20,
+            "line_end": 20,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        },
+        {
+          "type": "text",
+          "raw": "",
+          "clean": "",
+          "meta": {
+            "line_start": 21,
+            "line_end": 21,
+            "marker": null,
+            "url": null,
+            "lang": null
+          }
+        }
+      ]
+    }
+  ],
+  "content_elements": []
+}

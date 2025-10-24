@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "source": "Data Science Programming",
+    "extraction_time": "2023-10-01T00:00:00Z",
+    "notes_hash": "9d29c95b28d0bb85de79ebd3cb7e51caa37b30856c24f49f797889a749393062",
+    "allowed_relations": [
+      "isA",
+      "partOf",
+      "prerequisiteOf",
+      "dependsOn",
+      "relatedTo",
+      "synonymOf",
+      "antonymOf",
+      "contrastsWith",
+      "defines",
+      "uses",
+      "usedBy",
+      "appliesTo",
+      "exampleOf",
+      "counterexampleOf",
+      "illustratedBy",
+      "causes",
+      "resultsIn",
+      "prevents",
+      "assumes",
+      "implies",
+      "equivalentTo",
+      "parameterOf",
+      "hasParameter",
+      "propertyOf",
+      "hasProperty",
+      "measuredBy",
+      "unitOf",
+      "representedBy",
+      "notationFor",
+      "formulaFor",
+      "provedBy",
+      "theoremOf",
+      "algorithmFor",
+      "stepOf",
+      "produces",
+      "consumes",
+      "advantageOf",
+      "limitationOf",
+      "commonErrorIn",
+      "misconceptionOf",
+      "commonlyConfusedWith",
+      "assessedBy"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "1",
+      "label": "Time Series Data",
+      "type": "Concept",
+      "definition": "Time series data is a sequence of data points indexed in time order.",
+      "aliases": [
+        "Time Series"
+      ],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "Time Series"
+          ],
+          "line_start": 1,
+          "line_end": 1,
+          "text_excerpt": "Time series data is an important form of structured data in many different fields..."
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "The definition is directly stated and is fundamental to the topic of time series analysis."
+    },
+    {
+      "id": "2",
+      "label": "Pandas",
+      "type": "Library",
+      "definition": "Pandas is a Python library used for data manipulation and analysis.",
+      "aliases": [
+        "pandas"
+      ],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "imports"
+          ],
+          "line_start": 0,
+          "line_end": 0,
+          "text_excerpt": "import pandas as pd"
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "The code snippet clearly shows the importation of the Pandas library, indicating its use in time series operations."
+    },
+    {
+      "id": "3",
+      "label": "Datetime",
+      "type": "Concept",
+      "definition": "The datetime class in Python provides methods for manipulating dates and times.",
+      "aliases": [
+        "datetime"
+      ],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "Date and Time Data Types and Tools"
+          ],
+          "line_start": 1,
+          "line_end": 1,
+          "text_excerpt": "The datetime, time, and calendar modules are the main places to start."
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "The description is directly sourced from the lecture notes and defines a key tool in time series analysis."
+    },
+    {
+      "id": "4",
+      "label": "Time Zone Handling",
+      "type": "Concept",
+      "definition": "Time zone handling is crucial for accurately analyzing time series data across different regions.",
+      "aliases": [
+        "Time Zone Management"
+      ],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "Time Zone Handling"
+          ],
+          "line_start": 0,
+          "line_end": 0,
+          "text_excerpt": "Working with time zones is generally considered one of the most unpleasant parts of time series manipulation."
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "The significance of time zone handling is highlighted as a key aspect of time series analysis."
+    },
+    {
+      "id": "5",
+      "label": "Timespan",
+      "type": "Concept",
+      "definition": "Periods in time series data represent timespans such as days, months, and years.",
+      "aliases": [
+        "Period"
+      ],
+      "attributes": {},
+      "provenance": [
+        {
+          "section_path": [
+            "Periods and Period Arithmetic"
+          ],
+          "line_start": 0,
+          "line_end": 0,
+          "text_excerpt": "Periods represent timespans, like days, months, quarters, or years."
+        }
+      ],
+      "confidence": 1.0,
+      "rationale": "The explanation of periods and their significance is crucial for understanding time series data."
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge1",
+      "source": "1",
+      "target": "2",
+      "relation": "uses",
+      "provenance": [
+        {
+          "section_path": [
+            "Time Series Basics"
+          ],
+          "line_start": 0,
+          "line_end": 0,
+          "text_excerpt": "A basic kind of time series object in pandas is a Series indexed by timestamps."
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "Time series data is often manipulated using the Pandas library, establishing a strong usage relation."
+    },
+    {
+      "id": "edge2",
+      "source": "2",
+      "target": "3",
+      "relation": "dependsOn",
+      "provenance": [
+        {
+          "section_path": [
+            "Date and Time Data Types and Tools"
+          ],
+          "line_start": 0,
+          "line_end": 0,
+          "text_excerpt": "The datetime, time, and calendar modules are the main places to start."
+        }
+      ],
+      "confidence": 0.8,
+      "rationale": "Pandas operations often rely on datetime for handling date and time data."
+    },
+    {
+      "id": "edge3",
+      "source": "1",
+      "target": "4",
+      "relation": "relatedTo",
+      "provenance": [
+        {
+          "section_path": [
+            "Time Zone Handling"
+          ],
+          "line_start": 0,
+          "line_end": 0,
+          "text_excerpt": "Time zones are expressed as offsets from UTC..."
+        }
+      ],
+      "confidence": 0.85,
+      "rationale": "Time series analysis often requires adequate handling of time zones to ensure accurate representation of time data."
+    },
+    {
+      "id": "edge4",
+      "source": "1",
+      "target": "5",
+      "relation": "hasProperty",
+      "provenance": [
+        {
+          "section_path": [
+            "Periods and Period Arithmetic"
+          ],
+          "line_start": 0,
+          "line_end": 0,
+          "text_excerpt": "The Period class represents this data type, requiring a string or integer and a frequency."
+        }
+      ],
+      "confidence": 0.9,
+      "rationale": "Understanding periods is essential for effectively working with time series data."
+    }
+  ]
+}

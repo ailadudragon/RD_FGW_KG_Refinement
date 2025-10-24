@@ -1,0 +1,197 @@
+[
+  { "name": "factual_accuracy", 
+    "description": "Stem and options contain no factual errors relative to the lecture materials.",
+    "scale": "1–5",
+    "interpretation": [
+      {
+        "1": "contains factual errors in both stem and options",
+        "2": "contains at least one factual error in stem or options",
+        "3": "mostly accurate with minor issues in stem",
+        "4": "mostly accurate with minor issues in options",
+        "5": "completely accurate"
+      }
+    ]
+  },
+  { "name": "no_hallucinations",
+    "description": "Content is grounded in the lecture materials, not invented.",
+    "scale": "1–5",
+    "interpretation": [
+      {
+        "1": "mostly invented or irrelevant to lecture materials",
+        "2": "several invented or off-topic statements",
+        "3": "some content not grounded in lecture materials",
+        "4": "mostly grounded with only minor unsupported details",
+        "5": "fully grounded in the source material with no hallucination"
+      }
+    ]
+  },
+  { "name": "correct_key_answer",
+    "description": "The indicated answer is truly correct.",
+    "scale": "1–5",
+    "interpretation": [
+      {
+        "1": "key answer is incorrect",
+        "2": "key answer partially correct or contradicts lecture",
+        "3": "key answer mostly correct but debatable",
+        "4": "key answer correct with minor nuance issues",
+        "5": "key answer fully correct and precise"
+      }
+    ]
+  },
+  { "name": "incorrect_assumption",
+    "description": "The question and options do not contain false assumptions about the course material.",
+    "scale": "1–5",
+    "interpretation": [
+      {
+        "1": "question relies on a false or fabricated assumption",
+        "2": "some assumptions inconsistent with lecture content",
+        "3": "mostly consistent but minor assumption issue",
+        "4": "fully consistent except for minor nuance",
+        "5": "no false assumptions; fully aligned with course material"
+      }
+    ]
+  },
+  { "name": "unambiguous_question",
+    "description": "The question stem is clear and unambiguous.",
+    "scale": "1–5",
+    "interpretation": [
+      {
+        "1": "unclear or confusing wording",
+        "2": "some ambiguity in phrasing",
+        "3": "moderately clear but could be improved",
+        "4": "mostly clear and understandable",
+        "5": "perfectly clear and unambiguous"
+      }
+    ]
+  },
+  { "name": "unambiguous_options",
+    "description": "The options are distinct, interpretable, and not confusing.",
+    "scale": "1–5",
+    "interpretation": [
+      {
+        "1": "options overlap or are confusingly similar",
+        "2": "some options not clearly distinct",
+        "3": "options mostly clear but one or two overlap",
+        "4": "options distinct with only minor ambiguity",
+        "5": "all options fully distinct and interpretable"
+      }
+    ]
+  },
+  { "name": "grammar_fluency",
+    "description": "Stem and options are grammatically correct and fluent.",
+    "scale": "1–5",
+    "interpretation": [
+      {
+        "1": "poor grammar and unclear phrasing",
+        "2": "multiple grammatical errors",
+        "3": "minor grammar or fluency issues",
+        "4": "grammatically correct with excellent fluency",
+        "5": "grammatically perfect and stylistically fluent"
+      }
+    ]
+  },
+  { "name": "no_duplicates",
+    "description": "Options are unique and non-overlapping.",
+    "scale": "1–5",
+    "interpretation": [
+      {
+        "1": "duplicate or identical options present",
+        "2": "strong overlap between options",
+        "3": "minor overlap or redundancy",
+        "4": "all options unique except minor similarity",
+        "5": "all options clearly unique and non-overlapping"
+      }
+    ]
+  },
+  { "name": "no_answer_hints",
+    "description": "The stem or options do not give away the answer.",
+    "scale": "1–5",
+    "interpretation": [
+      {
+        "1": "obvious answer clue in wording or structure",
+        "2": "strong implicit hint toward correct answer",
+        "3": "minor clue or imbalance among options",
+        "4": "no meaningful hint but some subtle cues",
+        "5": "no answer hints or cues of any kind"
+      }
+    ]
+  },
+  { "name": "plausible_distractors",
+    "description": "Incorrect options are realistic and not trivially wrong.",
+    "scale": "1–5",
+    "interpretation": [
+      {
+        "1": "distractors are clearly wrong or irrelevant",
+        "2": "distractors weak or implausible",
+        "3": "some distractors plausible, others too easy",
+        "4": "all distractors plausible except one minor issue",
+        "5": "all distractors realistic and challenging"
+      }
+    ]
+  },
+  { "name": "unambiguous_correctness",
+    "description": "Only one option is clearly correct; distractors are clearly incorrect.",
+    "scale": "1–5",
+    "interpretation": [
+      {
+        "1": "multiple options could be correct",
+        "2": "significant ambiguity among options",
+        "3": "some uncertainty but one mostly correct option",
+        "4": "only one correct answer with minor ambiguity",
+        "5": "exactly one clearly correct answer"
+      }
+    ]
+  },
+  { "name": "hard_to_guess",
+    "description": "The question requires reasoning and understanding, hard for blind guessing.",
+    "scale": "1–5",
+    "interpretation": [
+      {
+        "1": "easily answerable by guessing",
+        "2": "guessing success moderately likely",
+        "3": "requires moderate recall or familiarity",
+        "4": "requires understanding and connection of ideas",
+        "5": "requires deep understanding and reasoning"
+      }
+    ]
+  },
+  { "name": "option_balance",
+    "description": "All options are similar in length, tone, and grammatical structure.",
+    "scale": "1–5",
+    "interpretation": [
+      {
+        "1": "options uneven in tone or length",
+        "2": "obvious imbalance in option phrasing",
+        "3": "minor imbalance but mostly consistent",
+        "4": "well balanced with slight stylistic differences",
+        "5": "fully balanced in length, tone, and structure"
+      }
+    ]
+  },
+  { "name": "cognitive_engagement",
+    "description": "Tests meaningful understanding, not trivial recall from rote memory.",
+    "scale": "1–5",
+    "interpretation": [
+      {
+        "1": "tests rote recall only",
+        "2": "low-level recall with minimal understanding",
+        "3": "moderate engagement; some application or understanding",
+        "4": "tests application and reasoning",
+        "5": "elicits deep cognitive engagement and understanding"
+      }
+    ]
+  },
+  { "name": "discrimination_ability",
+    "description": "Effectively differentiates between students who understand the material and those who do not.",
+    "scale": "1–5",
+    "interpretation": [
+      {
+        "1": "fails to differentiate; all students likely score similarly",
+        "2": "weak differentiation; too easy or too hard",
+        "3": "moderate discrimination between levels",
+        "4": "good discrimination; performance aligns with mastery",
+        "5": "excellent discriminator of understanding"
+      }
+    ]
+  }
+]		
